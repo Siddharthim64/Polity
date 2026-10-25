@@ -10,6 +10,7 @@ BANK = ROOT / "UPPCS_2026_Polity_Question_Bank.json"
 OUT = ROOT / "data" / "questions.js"
 
 LETTER_TO_INDEX = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4}
+LETTER_TO_INDEX_inv = {v: k for k, v in LETTER_TO_INDEX.items()}
 
 AR_OPTIONS = [
     {"en": "Both A and R are true and R is the correct explanation of A",
@@ -26,7 +27,28 @@ AR_OPTIONS = [
 
 
 def option_to_html(letter, opt):
-    return {"en": opt["en"], "hi": opt["hi"]}
+    return {"en": opt.get("en", ""), "hi": opt.get("hi", "")}
+
+
+def get_options(q):
+    """Get options as dict {letter: {en, hi}} from various formats."""
+    opts = q.get("options")
+    if opts is None:
+        opts = q.get("opts", {})
+    if isinstance(opts, list):
+        # List format: [{en, hi}, ...] -> {A: {...}, B: {...}, ...}
+        return {LETTER_TO_INDEX_inv[i]: o for i, o in enumerate(opts) if isinstance(o, dict)}
+    return opts or {}
+
+
+def get_correct(q, qtype):
+    """Get correct answer as letter(s)."""
+    c = q.get("correct")
+    if isinstance(c, int):
+        return LETTER_TO_INDEX_inv.get(c, str(c))
+    if isinstance(c, list):
+        return [LETTER_TO_INDEX_inv.get(x, x) for x in c]
+    return c  # Already a letter string like "A" or "AB"
 
 
 def question_to_obj(q):
@@ -36,8 +58,8 @@ def question_to_obj(q):
         "section": q["chapter"],
         "sub": q["subtopic"],
         "type": qtype,
-        "qEn": q["question_en"],
-        "qHi": q["question_hi"],
+        "qEn": q.get("question_en", ""),
+        "qHi": q.get("question_hi", ""),
         "cEn": q.get("correct_en", ""),
         "cHi": q.get("correct_hi", ""),
         "eEn": q.get("explanation_en", ""),
@@ -45,24 +67,28 @@ def question_to_obj(q):
         "ref": q.get("reference", ""),
     }
 
+    opts = get_options(q)
+
     if qtype == "mcq_single":
-        obj["opts"] = [option_to_html(k, q["options"][k]) for k in ("A", "B", "C", "D")]
-        obj["correct"] = LETTER_TO_INDEX[q["correct"]]
+        obj["opts"] = [option_to_html(k, opts.get(k, {"en": "", "hi": ""})) for k in ("A", "B", "C", "D")]
+        obj["correct"] = LETTER_TO_INDEX[get_correct(q, qtype)]
     elif qtype == "mcq_multi":
-        obj["opts"] = [option_to_html(k, q["options"][k]) for k in ("A", "B", "C", "D")]
-        obj["correct"] = [LETTER_TO_INDEX[c] for c in q["correct"]]
+        obj["opts"] = [option_to_html(k, opts.get(k, {"en": "", "hi": ""})) for k in ("A", "B", "C", "D")]
+        obj["correct"] = [LETTER_TO_INDEX[c] for c in get_correct(q, qtype)]
     elif qtype == "assertion_reason":
-        obj["assertionEn"] = q["assertion_en"]
-        obj["assertionHi"] = q["assertion_hi"]
-        obj["reasonEn"] = q["reason_en"]
-        obj["reasonHi"] = q["reason_hi"]
+        obj["assertionEn"] = q.get("assertion_en", "")
+        obj["assertionHi"] = q.get("assertion_hi", "")
+        obj["reasonEn"] = q.get("reason_en", "")
+        obj["reasonHi"] = q.get("reason_hi", "")
         obj["opts"] = [{"en": o["en"], "hi": o["hi"]} for o in AR_OPTIONS]
-        obj["correct"] = LETTER_TO_INDEX[q["correct"]]
+        obj["correct"] = LETTER_TO_INDEX[get_correct(q, qtype)]
     elif qtype == "matching":
-        obj["col1"] = [{"en": it["en"], "hi": it["hi"]} for it in q["column1"]]
-        obj["col2"] = [{"en": it["en"], "hi": it["hi"]} for it in q["column2"]]
-        obj["opts"] = [{"en": it["en"], "hi": it["hi"]} for it in q["column2"]]
-        obj["correct"] = q["correct_mapping"]
+        col1 = q.get("col1") or q.get("column1") or []
+        col2 = q.get("col2") or q.get("column2") or []
+        obj["col1"] = [{"en": it.get("en", ""), "hi": it.get("hi", "")} for it in col1]
+        obj["col2"] = [{"en": it.get("en", ""), "hi": it.get("hi", "")} for it in col2]
+        obj["opts"] = [{"en": it.get("en", ""), "hi": it.get("hi", "")} for it in col2]
+        obj["correct"] = q.get("correct_mapping", {})
     return obj
 
 
@@ -72,7 +98,7 @@ def main():
     sections = {}
     order = []
     for q in questions:
-        sec = q["chapter"]
+        sec = q.get("chapter", "Uncategorized")
         if sec not in sections:
             sections[sec] = []
             order.append(sec)

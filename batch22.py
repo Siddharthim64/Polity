@@ -1,0 +1,180 @@
+# Batch 22: Emergency; Constitutional bodies; Cooperative societies; Statutory bodies; Elections (~18 each -> 25)
+NEW_QUESTIONS = []
+
+# =====================================================================
+# CHAPTER: Emergency provisions   (need +21 -> 25)
+# =====================================================================
+CH = "Emergency provisions"
+
+NEW_QUESTIONS += [
+    {
+        "chapter": CH, "subtopic": "National Emergency",
+        "type": "mcq_single",
+        "question_en": "National Emergency can be declared under Article:",
+        "question_hi": "राष्ट्रीय आपातकाल किस अनुच्छेद के तहत घोषित किया जा सकता है?",
+        "options": {
+            "A": {"en": "352", "hi": "352"},
+            "B": {"en": "356", "hi": "356"},
+            "C": {"en": "360", "hi": "360"},
+            "D": {"en": "356", "hi": "356"},
+        },
+        "correct": "A",
+        "explanation_en": "Article 352 empowers the President to declare a National Emergency if the security of India or any part is threatened by war, external aggression or armed rebellion.",
+        "explanation_hi": "अनुच्छेद 352 राष्ट्रपति को राष्ट्रीय आपातकाल घोषित करने का अधिकार देता है यदि भारत या उसके किसी हिस्से की सुरक्षा युद्ध, बाह्य आक्रमण या सशस्त्र विद्रोह से खतरे में हो।",
+        "reference": "Article 352, Constitution of India",
+    },
+    {
+        "chapter": CH, "subtopic": "Grounds for National Emergency",
+        "type": "mcq_single",
+        "question_en": "Before the 44th Amendment, the ground for National Emergency included:",
+        "question_hi": "44वें संशोधन से पहले, राष्ट्रीय आपातकाल का आधार शामिल था:",
+        "options": {
+            "A": {"en": "Internal disturbance", "hi": "आंतरिक अशांति"},
+            "B": {"en": "War", "hi": "युद्ध"},
+            "C": {"en": "External aggression", "hi": "बाह्य आक्रमण"},
+            "D": {"en": "All of these", "hi": "ये सभी"},
+        },
+        "correct": "D",
+        "explanation_en": "Before the 44th Amendment (1978), 'internal disturbance' was also a ground. The 44th Amendment replaced it with 'armed rebellion'.",
+        "explanation_hi": "44वें संशोधन (1978) से पहले, 'आंतरिक अशांति' भी एक आधार था। 44वें संशोधन ने इसे 'सशस्त्र विद्रोह' से बदल दिया।",
+        "reference": "Article 352; 44th Amendment, 1978",
+    },
+    {
+        "chapter": CH, "subtopic": "President's Rule",
+        "type": "mcq_single",
+        "question_en": "President's Rule in a State is imposed under Article:",
+        "question_hi": "राज्य में राष्ट्रपति शासन किस अनुच्छेद के तहत लगाया जाता है?",
+        "options": {
+            "A": {"en": "356", "hi": "356"},
+            "B": {"en": "352", "hi": "352"},
+            "C": {"en": "360", "hi": "360"},
+            "D": {"en": "355", "hi": "355"},
+        },
+        "correct": "A",
+        "explanation_en": "Article 356 empowers the President to impose President's Rule in a State if the constitutional machinery has failed.",
+        "explanation_hi": "अनुच्छेद 356 राष्ट्रपति को राज्य में राष्ट्रपति शासन लगाने का अधिकार देता है यदि संवैधानिक तंत्र विफल हो गया है।",
+        "reference": "Article 356, Constitution of India",
+    },
+    {
+        "chapter": CH, "subtopic": "Financial Emergency",
+        "type": "mcq_single",
+        "question_en": "Financial Emergency is declared under Article:",
+        "question_hi": "वित्तीय आपातकाल किस अनुच्छेद के तहत घोषित किया जाता है?",
+        "options": {
+            "A": {"en": "360", "hi": "360"},
+            "B": {"en": "352", "hi": "352"},
+            "C": {"en": "356", "hi": "356"},
+            "D": {"en": "355", "hi": "355"},
+        },
+        "correct": "A",
+        "explanation_en": "Article 360 empowers the President to declare a Financial Emergency if the financial stability or credit of India or any part is threatened.",
+        "explanation_hi": "अनुच्छेद 360 राष्ट्रपति को वित्तीय आपातकाल घोषित करने का अधिकार देता है यदि भारत या उसके किसी हिस्से की वित्तीय स्थिरता या ऋण खतरे में हो।",
+        "reference": "Article 360, Constitution of India",
+    },
+    {
+        "chapter": CH, "subtopic": "Suspension of rights",
+        "type": "mcq_single",
+        "question_en": "During a National Emergency, the Fundamental Rights under Article 19 are automatically suspended under Article:",
+        "question_hi": "राष्ट्रीय आपातकाल के दौरान अनुच्छेद 19 के तहत मौलिक अधिकार स्वचालित रूप से निलंबित हो जाते हैं अनुच्छेद के तहत:",
+        "options": {
+            "A": {"en": "358", "hi": "358"},
+            "B": {"en": "359", "hi": "359"},
+            "C": {"en": "352", "hi": "352"},
+            "D": {"en": "356", "hi": "356"},
+        },
+        "correct": "A",
+        "explanation_en": "Article 358 provides that when a Proclamation of National Emergency is in operation, the Fundamental Rights under Article 19 are automatically suspended.",
+        "explanation_hi": "अनुच्छेद 358 के अनुसार, जब राष्ट्रीय आपातकाल की घोषणा संचालन में हो, तो अनुच्छेद 19 के तहत मौलिक अधिकार स्वचालित रूप से निलंबित हो जाते हैं।",
+        "reference": "Article 358, Constitution of India",
+    },
+    {
+        "chapter": CH, "subtopic": "Suspension of rights",
+        "type": "mcq_single",
+        "question_en": "The right to move courts for enforcement of Fundamental Rights can be suspended under Article:",
+        "question_hi": "मौलिक अधिकारों के प्रवर्तन के लिए अदालतों में जाने का अधिकार किस अनुच्छेद के तहत निलंबित किया जा सकता है?",
+        "options": {
+            "A": {"en": "359", "hi": "359"},
+            "B": {"en": "358", "hi": "358"},
+            "C": {"en": "352", "hi": "352"},
+            "D": {"en": "356", "hi": "356"},
+        },
+        "correct": "A",
+        "explanation_en": "Article 359 empowers the President to suspend the right to move any court for the enforcement of Fundamental Rights during a National Emergency (but Articles 20 and 21 cannot be suspended after the 44th Amendment).",
+        "explanation_hi": "अनुच्छेद 359 राष्ट्रपति को राष्ट्रीय आपातकाल के दौरान मौलिक अधिकारों के प्रवर्तन के लिए किसी भी अदालत में जाने के अधिकार को निलंबित करने का अधिकार देता है (लेकिन 44वें संशोधन के बाद अनुच्छेद 20 और 21 को निलंबित नहीं किया जा सकता)।",
+        "reference": "Article 359; 44th Amendment, 1978",
+    },
+    # ---- mcq_multi ----
+    {
+        "chapter": CH, "subtopic": "Types of emergencies",
+        "type": "mcq_multi",
+        "question_en": "Which of the following are types of emergencies under the Constitution?",
+        "question_hi": "निम्नलिखित में से कौन से संविधान के तहत आपातकाल के प्रकार हैं?",
+        "options": {
+            "A": {"en": "National Emergency", "hi": "राष्ट्रीय आपातकाल"},
+            "B": {"en": "State Emergency / President's Rule", "hi": "राज्य आपातकाल / राष्ट्रपति शासन"},
+            "C": {"en": "Financial Emergency", "hi": "वित्तीय आपातकाल"},
+            "D": {"en": "Health Emergency", "hi": "स्वास्थ्य आपातकाल"},
+            "E": {"en": "Security Emergency", "hi": "सुरक्षा आपातकाल"},
+        },
+        "correct": "ABC",
+        "explanation_en": "The Constitution provides for three types of emergencies: National Emergency (Art 352), State Emergency/President's Rule (Art 356) and Financial Emergency (Art 360).",
+        "explanation_hi": "संविधान तीन प्रकार के आपातकाल का प्रावधान करता है: राष्ट्रीय आपातकाल (अनुच्छेद 352), राज्य आपातकाल/राष्ट्रपति शासन (अनुच्छेद 356) और वित्तीय आपातकाल (अनुच्छेद 360)।",
+        "reference": "Articles 352, 356, 360",
+    },
+    {
+        "chapter": CH, "subtopic": "Effects",
+        "type": "mcq_multi",
+        "question_en": "During a National Emergency:",
+        "question_hi": "राष्ट्रीय आपातकाल के दौरान:",
+        "options": {
+            "A": {"en": "The executive power of the Union extends to giving directions to States", "hi": "संघ की कार्यकारी शक्ति राज्यों को निर्देश देने तक विस्तारित होती है"},
+            "B": {"en": "Parliament can make laws on State List subjects", "hi": "संसद राज्य सूची विषयों पर कानून बना सकती है"},
+            "C": {"en": "Article 19 rights are suspended", "hi": "अनुच्छेद 19 अधिकार निलंबित हैं"},
+            "D": {"en": "The President can dissolve State Legislatures directly", "hi": "राष्ट्रपति सीधे राज्य विधानमंडलों को भंग कर सकता है"},
+            "E": {"en": "Fundamental Rights under Articles 20 and 21 cannot be suspended", "hi": "अनुच्छेद 20 और 21 के तहत मौलिक अधिकार निलंबित नहीं किए जा सकते"},
+        },
+        "correct": "ABCE",
+        "explanation_en": "During National Emergency, Union executive power extends to giving directions to States, Parliament can legislate on State List, Article 19 rights are suspended, but Articles 20 and 21 cannot be suspended (44th Amendment).",
+        "explanation_hi": "राष्ट्रीय आपातकाल के दौरान, संघ की कार्यकारी शक्ति राज्यों को निर्देश देने तक विस्तारित होती है, संसद राज्य सूची पर कानून बना सकती है, अनुच्छेद 19 अधिकार निलंबित हैं, लेकिन अनुच्छेद 20 और 21 निलंबित नहीं किए जा सकते (44वां संशोधन)।",
+        "reference": "Articles 352, 353, 358, 359",
+    },
+    # ---- assertion_reason ----
+    {
+        "chapter": CH, "subtopic": "Financial Emergency",
+        "type": "assertion_reason",
+        "question_en": None,
+        "question_hi": None,
+        "assertion_en": "A Financial Emergency has never been declared in India.",
+        "assertion_hi": "भारत में कभी वित्तीय आपातकाल घोषित नहीं किया गया है।",
+        "reason_en": "Article 360 provides for Financial Emergency but it has never been invoked.",
+        "reason_hi": "अनुच्छेद 360 वित्तीय आपातकाल का प्रावधान करता है लेकिन इसे कभी लागू नहीं किया गया है।",
+        "correct": "A",
+        "explanation_en": "Both A and R are true, and R correctly explains A — Financial Emergency under Article 360 has never been declared.",
+        "explanation_hi": "A और R दोनों सत्य हैं, और R, A को सही ढंग से समझाता है — अनुच्छेद 360 के तहत वित्तीय आपातकाल कभी घोषित नहीं किया गया।",
+        "reference": "Article 360, Constitution of India",
+    },
+    # ---- matching ----
+    {
+        "chapter": CH, "subtopic": "Articles",
+        "type": "matching",
+        "question_en": None,
+        "question_hi": None,
+        "column1": [
+            {"en": "Article 352", "hi": "अनुच्छेद 352"},
+            {"en": "Article 356", "hi": "अनुच्छेद 356"},
+            {"en": "Article 360", "hi": "अनुच्छेद 360"},
+            {"en": "Article 358", "hi": "अनुच्छेद 358"},
+            {"en": "Article 359", "hi": "अनुच्छेद 359"},
+        ],
+        "column2": [
+            {"en": "National Emergency", "hi": "राष्ट्रीय आपातकाल"},
+            {"en": "President's Rule", "hi": "राष्ट्रपति शासन"},
+            {"en": "Financial Emergency", "hi": "वित्तीय आपातकाल"},
+            {"en": "Suspension of Article 19", "hi": "अनुच्छेद 19 का निलंबन"},
+            {"en": "Suspension of right to move courts", "hi": "अदालतों में जाने के अधिकार का निलंबन"},
+        ],
+        "correct_mapping": {"0": "0", "1": "1", "2": "2", "3": "3", "4": "4"},
+    },
+]
+
+print(f"batch22 prepared: {len(NEW_QUESTIONS)} questions")
