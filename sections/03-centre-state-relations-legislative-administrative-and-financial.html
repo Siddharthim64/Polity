@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Centre-State relations: legislative, administrative, and financial</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Centre-State relations: legislative, administrative, and financial</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-044", "section": "Centre-State relations: legislative, administrative, and financial", "sub": "Legislative relations", "type": "mcq_single", "qEn": "The residuary power of legislation is vested in:", "qHi": "विधान की अवशिष्ट शक्ति किसमें निहित है?", "cEn": "The Union", "cHi": "संघ", "eEn": "Article 248 and Entry 97 of the Union List (Seventh Schedule) vest residuary power of legislation in Parliament (the Union). Any matter not enumerated in the Concurrent List or State List falls under the Union's residuary power.", "eHi": "अनुच्छेद 248 और सातवीं अनुसूची की संघ सूची की प्रविष्टि 97 विधान की अवशिष्ट शक्ति संसद (संघ) में निहित करती है। कोई भी मामला जो समवर्ती सूची या राज्य सूची में गिना नहीं जाता है, वह संघ की अवशिष्ट शक्ति के अंतर्गत आता है।", "ref": "Articles 245-255, Seventh Schedule, Constitution of India", "opts": [{"en": "The States", "hi": "राज्य"}, {"en": "The Union", "hi": "संघ"}, {"en": "Both Union and States", "hi": "संघ और राज्य दोनों"}, {"en": "The Supreme Court", "hi": "सर्वोच्च न्यायालय"}], "correct": 1},
+  {"id": "POL-045", "section": "Centre-State relations: legislative, administrative, and financial", "sub": "Administrative relations", "type": "mcq_single", "qEn": "The Inter-State Council is established under:", "qHi": "राज्य antara की परिषद की स्थापना किसके तहत की गई है?", "cEn": "Article 263", "cHi": "अनुच्छेद 263", "eEn": "Article 263 empowers the President to establish an Inter-State Council if it appears that public interests would be served by its establishment. The Council inquires into and advises upon disputes between States, investigates subjects of common interest, and makes recommendations for better coordination of policy and action.", "eHi": "अनुच्छेद 263 राष्ट्रपति को राज्य antara की परिषद स्थापित करने का अधिकार देता है यदि ऐसा प्रतीत होता है कि इसके गठन से सार्वजनिक हित की सेवा होगी। परिषद राज्यों के बीच विवादों की जांच और सलाह देती है, सामान्य हित के विषयों की जांच करती है, और नीति और कार्रवाई के बेहतर समन्वय के लिए सिफारिशें करती है।", "ref": "Article 263, Constitution of India", "opts": [{"en": "Article 263", "hi": "अनुच्छेद 263"}, {"en": "Article 280", "hi": "अनुच्छेद 280"}, {"en": "Article 256", "hi": "अनुच्छेद 256"}, {"en": "Article 252", "hi": "अनुच्छेद 252"}], "correct": 0},
+  {"id": "POL-046", "section": "Centre-State relations: legislative, administrative, and financial", "sub": "Financial relations", "type": "mcq_single", "qEn": "The Finance Commission is constituted under:", "qHi": "वित्त आयोग का गठन किसके तहत किया गया है?", "cEn": "Article 280", "cHi": "अनुच्छेद 280", "eEn": "Article 280 provides for a Finance Commission to be constituted by the President every five years (or earlier) to recommend distribution of net proceeds of taxes between Union and States, grants-in-aid, and other financial matters referred by the President.", "eHi": "अनुच्छेद 280 एक वित्त आयोग का प्रावधान करता है जिसे राष्ट्रपति हर पांच वर्ष में (या पहले) करों के शुद्ध प्राप्तियों का संघ और राज्यों के बीच वितरण, अनुदान-सहायता, और राष्ट्रपति द्वारा संदर्भित अन्य वित्तीय मामलों की सिफारिश के लिए गठित करता है।", "ref": "Article 280, Constitution of India", "opts": [{"en": "Article 280", "hi": "अनुच्छेद 280"}, {"en": "Article 267", "hi": "अनुच्छेद 267"}, {"en": "Article 268", "hi": "अनुच्छेद 268"}, {"en": "Article 275", "hi": "अनुच्छेद 275"}], "correct": 0},
+  {"id": "POL-080", "section": "Centre-State relations: legislative, administrative, and financial", "sub": "Finance Commission", "type": "mcq_single", "qEn": "The Finance Commission is constituted every:", "qHi": "वित्त आयोग प्रत्येक कितने वर्ष में गठित किया जाता है:", "cEn": "5 years", "cHi": "5 वर्ष", "eEn": "Article 280 provides for a Finance Commission to be constituted every five years or earlier.", "eHi": "अनुच्छेद 280 हर पांच वर्ष में या उससे पहले एक वित्त आयोग गठित करने का प्रावधान करता है।", "ref": "Article 280", "opts": [{"en": "5 years", "hi": "5 वर्ष"}, {"en": "3 years", "hi": "3 वर्ष"}, {"en": "10 years", "hi": "10 वर्ष"}, {"en": "President's pleasure", "hi": "राष्ट्रपति की इच्छा तक"}], "correct": 0},
+  {"id": "POL-081", "section": "Centre-State relations: legislative, administrative, and financial", "sub": "Contingency Fund of State", "type": "mcq_single", "qEn": "Contingency Fund of a State is under the control of:", "qHi": "एक राज्य की आकस्मिक निधि किसके नियंत्रण में है:", "cEn": "Governor of the State", "cHi": "राज्य के राज्यपाल", "eEn": "Article 267(2) provides for the Contingency Fund of each State under the control of the Governor.", "eHi": "अनुच्छेद 267(2) प्रत्येक राज्य की आकस्मिक निधि राज्यपाल के नियंत्रण में प्रावधान करता है।", "ref": "Article 267", "opts": [{"en": "Governor of the State", "hi": "राज्य के राज्यपाल"}, {"en": "Chief Minister", "hi": "मुख्यमंत्री"}, {"en": "President", "hi": "राष्ट्रपति"}, {"en": "State Legislature", "hi": "राज्य विधानमंडल"}], "correct": 0}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — The Preamble</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — The Preamble</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-005", "section": "The Preamble", "sub": "Contents of the Preamble", "type": "mcq_single", "qEn": "Which of the following words is NOT mentioned in the Preamble of the Constitution of India?", "qHi": "भारत के संविधान की प्रस्तावना में निम्नलिखित में से कौन-सा शब्द उल्लिखित नहीं है?", "cEn": "Federal", "cHi": "संघीय", "eEn": "The Preamble declares India a Sovereign, Socialist, Secular, Democratic Republic. 'Socialist' and 'Secular' were added by the 42nd Amendment (1976). 'Federal' is not a word in the Preamble, though the Constitution has federal features.", "eHi": "प्रस्तावना भारत को एक सर्वभौम, समाजवादी, धर्मनिरपेक्ष, लोकतांत्रिक गणराज्य घोषित करती है। 'समाजवादी' और 'धर्मनिरपेक्ष' 42वें संशोधन (1976) द्वारा जोड़े गए थे। 'संघीय' शब्द प्रस्तावना में नहीं है, हालांकि संविधान में संघीय विशेषताएं हैं।", "ref": "Preamble of the Constitution of India; 42nd Amendment Act, 1976", "opts": [{"en": "Sovereign", "hi": "सर्वभौम"}, {"en": "Democratic", "hi": "लोकतांत्रिक"}, {"en": "Secular", "hi": "धर्मनिरपेक्ष"}, {"en": "Federal", "hi": "संघीय"}], "correct": 3},
+  {"id": "POL-058", "section": "The Preamble", "sub": "Preamble as part of Constitution", "type": "mcq_single", "qEn": "The Preamble is a part of the Constitution as held in:", "qHi": "प्रस्तावना संविधान का हिस्सा है जैसा कि निम्नलिखित में स्थापित किया गया:", "cEn": "Kesavananda Bharati case", "cHi": "केशवानंद भारती मामला", "eEn": "In Kesavananda Bharati v. State of Kerala (1973), the Supreme Court held that the Preamble is a part of the Constitution.", "eHi": "केशवानंद भारती बनाम केरल राज्य (1973) में, सर्वोच्च न्यायालय ने कहा कि प्रस्तावना संविधान का हिस्सा है।", "ref": "Kesavananda Bharati case, 1973", "opts": [{"en": "Golaknath case", "hi": "गोलकनाथ मामला"}, {"en": "Kesavananda Bharati case", "hi": "केशवानंद भारती मामला"}, {"en": "Minerva Mills case", "hi": "मिनर्वा मिल्स मामला"}, {"en": "Berubari case", "hi": "बेरूबाड़ी मामला"}], "correct": 1}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

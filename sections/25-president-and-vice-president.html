@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — President and Vice-President</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — President and Vice-President</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-031", "section": "President and Vice-President", "sub": "President", "type": "mcq_single", "qEn": "The President of India is elected by:", "qHi": "भारत के राष्ट्रपति का चुनाव किसके द्वारा किया जाता है?", "cEn": "An electoral college", "cHi": "एक चुनावी मंडल द्वारा", "eEn": "Article 54 states that the President shall be elected by an electoral college consisting of elected members of both Houses of Parliament and elected members of the Legislative Assemblies of the States (including NCT of Delhi and Puducherry).", "eHi": "अनुच्छेद 54 कहता है कि राष्ट्रपति का चुनाव एक चुनावी मंडल द्वारा किया जाएगा जिसमें संसद के दोनों सदनों के निर्वाचित सदस्य और राज्यों की विधान सभाओं के निर्वाचित सदस्य (एनसीटी दिल्ली और पुदुचेरी सहित) शामिल हैं।", "ref": "Articles 52-62, Constitution of India", "opts": [{"en": "Directly by the people", "hi": "लोगों द्वारा सीधे"}, {"en": "An electoral college", "hi": "एक चुनावी मंडल द्वारा"}, {"en": "Lok Sabha only", "hi": "केवल लोक सभा द्वारा"}, {"en": "Rajya Sabha only", "hi": "केवल राज्य सभा द्वारा"}], "correct": 1},
+  {"id": "POL-032", "section": "President and Vice-President", "sub": "Vice-President", "type": "mcq_single", "qEn": "The Vice-President of India is ex-officio Chairman of:", "qHi": "भारत के उपराष्ट्रपति पदेन अध्यक्ष होते हैं:", "cEn": "Rajya Sabha", "cHi": "राज्य सभा", "eEn": "Article 64 states that the Vice-President shall be ex-officio Chairman of the Council of States (Rajya Sabha). The Vice-President is elected by an electoral college consisting of members of both Houses of Parliament (Article 66).", "eHi": "अनुच्छेद 64 कहता है कि उपराष्ट्रपति राज्य सभा (राज्यों की परिषद) के पदेन अध्यक्ष होंगे। उपराष्ट्रपति का चुनाव एक चुनावी मंडल द्वारा किया जाता है जिसमें संसद के दोनों सदनों के सदस्य शामिल हैं (अनुच्छेद 66)।", "ref": "Articles 63-71, Constitution of India", "opts": [{"en": "Lok Sabha", "hi": "लोक सभा"}, {"en": "Rajya Sabha", "hi": "राज्य सभा"}, {"en": "Parliament", "hi": "संसद"}, {"en": "Planning Commission", "hi": "योजना आयोग"}], "correct": 1},
+  {"id": "POL-073", "section": "President and Vice-President", "sub": "President's term", "type": "mcq_single", "qEn": "The President holds office for a term of:", "qHi": "राष्ट्रपति का कार्यकाल होता है:", "cEn": "5 years", "cHi": "5 वर्ष", "eEn": "Article 56 states that the President shall hold office for a term of five years.", "eHi": "अनुच्छेद 56 कहता है कि राष्ट्रपति पांच वर्ष की अवधि के लिए पद धारण करेगा।", "ref": "Article 56", "opts": [{"en": "5 years", "hi": "5 वर्ष"}, {"en": "6 years", "hi": "6 वर्ष"}, {"en": "4 years", "hi": "4 वर्ष"}, {"en": "Till President's pleasure", "hi": "राष्ट्रपति की इच्छा तक"}], "correct": 0},
+  {"id": "POL-106", "section": "President and Vice-President", "sub": "Position and Powers of the President", "type": "assertion_reason", "qEn": "Assertion: The President of India is the head of the State.", "qHi": "अभिकथन: भारत के राष्ट्रपति राज्य के प्रमुख हैं।", "cEn": "Both Assertion and Reason are true, and Reason is the correct explanation of Assertion", "cHi": "दोनों अभिकथन और कारण सत्य हैं, और कारण अभिकथन की सही व्याख्या है", "eEn": "Article 53 vests the executive power of the Union in the President, and Article 77 provides that all executive actions of the Union Government are expressed to be taken in the name of the President.", "eHi": "अनुच्छेद 53 संघ की कार्यकारी शक्ति राष्ट्रपति में निहित करता है, और अनुच्छेद 77 प्रदान करता है कि संघ सरकार की सभी कार्यकारी कार्रवाइयां राष्ट्रपति के नाम पर की गई अभिव्यक्त की जाती हैं।", "ref": "Articles 53, 77, Constitution of India", "assertionEn": "Assertion: The President of India is the head of the State.", "assertionHi": "अभिकथन: भारत के राष्ट्रपति राज्य के प्रमुख हैं।", "reasonEn": "Reason: All executive actions of the Union Government are taken in the name of the President.", "reasonHi": "कारण: संघ सरकार की सभी कार्यकारी कार्रवाइयां राष्ट्रपति के नाम पर की जाती हैं।", "opts": [{"en": "Both A and R are true and R is the correct explanation of A", "hi": "A और R दोनों सत्य हैं और R, A की सही व्याख्या है"}, {"en": "Both A and R are true but R is NOT the correct explanation of A", "hi": "A और R दोनों सत्य हैं परंतु R, A की सही व्याख्या नहीं है"}, {"en": "A is true but R is false", "hi": "A सत्य है परंतु R असत्य है"}, {"en": "A is false but R is true", "hi": "A असत्य है परंतु R सत्य है"}, {"en": "Both A and R are false", "hi": "A और R दोनों असत्य हैं"}], "correct": 0}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

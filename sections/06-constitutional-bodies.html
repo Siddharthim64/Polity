@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Constitutional bodies</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Constitutional bodies</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-049", "section": "Constitutional bodies", "sub": "Election Commission", "type": "mcq_single", "qEn": "The Election Commission of India is constituted under:", "qHi": "भारत निर्वाचन आयोग का गठन किसके तहत किया गया है?", "cEn": "Article 324", "cHi": "अनुच्छेद 324", "eEn": "Article 324 vests the superintendence, direction and control of elections to Parliament, State Legislatures, and the offices of President and Vice-President in the Election Commission of India. The CEC and other Election Commissioners are appointed by the President.", "eHi": "अनुच्छेद 324 संसद, राज्य विधानमंडलों और राष्ट्रपति और उपराष्ट्रपति के पदों के चुनावों के अधीक्षण, निर्देशन और नियंत्रण को भारत निर्वाचन आयोग में निहित करता है। मुख्य चुनाव आयुक्त और अन्य चुनाव आयुक्तों की नियुक्ति राष्ट्रपति द्वारा की जाती है।", "ref": "Article 324, Constitution of India", "opts": [{"en": "Article 324", "hi": "अनुच्छेद 324"}, {"en": "Article 315", "hi": "अनुच्छेद 315"}, {"en": "Article 280", "hi": "अनुच्छेद 280"}, {"en": "Article 148", "hi": "अनुच्छेद 148"}], "correct": 0},
+  {"id": "POL-050", "section": "Constitutional bodies", "sub": "CAG", "type": "mcq_single", "qEn": "The Comptroller and Auditor General of India is constituted under:", "qHi": "भारत के नियंत्रक और महालेखा परीक्षक का गठन किसके तहत किया गया है?", "cEn": "Article 148", "cHi": "अनुच्छेद 148", "eEn": "Article 148 provides for a Comptroller and Auditor General of India who shall be appointed by the President. The CAG audits all expenditure from the Consolidated Fund of India, Contingency Fund, and Public Account, and submits reports to the President/Governor.", "eHi": "अनुच्छेद 148 भारत के नियंत्रक और महालेखा परीक्षक का प्रावधान करता है जिसकी नियुक्ति राष्ट्रपति द्वारा की जाएगी। CAG भारत की समेकित निधि, आकस्मिक निधि और लोक लेखा से सभी व्यय का लेखा परीक्षण करता है और राष्ट्रपति/राज्यपाल को रिपोर्ट प्रस्तुत करता है।", "ref": "Article 148, Constitution of India", "opts": [{"en": "Article 148", "hi": "अनुच्छेद 148"}, {"en": "Article 324", "hi": "अनुच्छेद 324"}, {"en": "Article 315", "hi": "अनुच्छेद 315"}, {"en": "Article 280", "hi": "अनुच्छेद 280"}], "correct": 0},
+  {"id": "POL-087", "section": "Constitutional bodies", "sub": "Election Commission composition", "type": "mcq_single", "qEn": "The Election Commission consists of:", "qHi": "निर्वाचन आयोग में शामिल हैं:", "cEn": "CEC and such number of other Election Commissioners as President may determine", "cHi": "मुख्य चुनाव आयुक्त और राष्ट्रपति द्वारा निर्धारित अन्य चुनाव आयुक्तों की संख्या", "eEn": "Article 324(2) states that the Election Commission shall consist of the Chief Election Commissioner and such number of other Election Commissioners as the President may fix.", "eHi": "अनुच्छेद 324(2) कहता है कि निर्वाचन आयोग में मुख्य चुनाव आयुक्त और राष्ट्रपति द्वारा निर्धारित अन्य चुनाव आयुक्तों की संख्या शामिल होगी।", "ref": "Article 324", "opts": [{"en": "CEC and such number of other Election Commissioners as President may determine", "hi": "मुख्य चुनाव आयुक्त और राष्ट्रपति द्वारा निर्धारित अन्य चुनाव आयुक्तों की संख्या"}, {"en": "CEC only", "hi": "केवल मुख्य चुनाव आयुक्त"}, {"en": "CEC and two Election Commissioners", "hi": "मुख्य चुनाव आयुक्त और दो चुनाव आयुक्त"}, {"en": "President alone", "hi": "केवल राष्ट्रपति"}], "correct": 0},
+  {"id": "POL-088", "section": "Constitutional bodies", "sub": "UPSC functions", "type": "mcq_single", "qEn": "Union Public Service Commission is established under:", "qHi": "संघ लोक सेवा आयोग की स्थापना किसके तहत है:", "cEn": "Article 315", "cHi": "अनुच्छेद 315", "eEn": "Article 315 provides for Public Service Commissions for the Union and each State.", "eHi": "अनुच्छेद 315 संघ और प्रत्येक राज्य के लिए लोक सेवा आयोगों का प्रावधान करता है।", "ref": "Article 315", "opts": [{"en": "Article 315", "hi": "अनुच्छेद 315"}, {"en": "Article 324", "hi": "अनुच्छेद 324"}, {"en": "Article 280", "hi": "अनुच्छेद 280"}, {"en": "Article 148", "hi": "अनुच्छेद 148"}], "correct": 0},
+  {"id": "POL-109", "section": "Constitutional bodies", "sub": "Articles establishing bodies", "type": "matching", "qEn": "Match the constitutional body with the Article under which it is established.", "qHi": "संवैधानिक निकाय को उस अनुच्छेद से मिलान करें जिसके तहत वह स्थापित है।", "cEn": "Election Commission — Article 324; Finance Commission — Article 280; UPSC — Article 315; Attorney General — Article 76", "cHi": "निर्वाचन आयोग — अनुच्छेद 324; वित्त आयोग — अनुच्छेद 280; संघ लोक सेवा आयोग — अनुच्छेद 315; अटॉर्नी जनरल — अनुच्छेद 76", "eEn": "Article 324 provides for the Election Commission; Article 280 for the Finance Commission; Article 315 for Public Service Commissions (UPSC/State); Article 76 for the Attorney General of India.", "eHi": "अनुच्छेद 324 निर्वाचन आयोग का प्रावधान करता है; अनुच्छेद 280 वित्त आयोग का; अनुच्छेद 315 लोक सेवा आयोगों (यूपीएससी/राज्य) का; अनुच्छेद 76 भारत के अटॉर्नी जनरल का।", "ref": "Articles 324, 280, 315, 76, Constitution of India", "col1": [{"en": "Election Commission", "hi": "निर्वाचन आयोग"}, {"en": "Finance Commission", "hi": "वित्त आयोग"}, {"en": "Union Public Service Commission", "hi": "संघ लोक सेवा आयोग"}, {"en": "Attorney General of India", "hi": "भारत के अटॉर्नी जनरल"}], "col2": [{"en": "Article 76", "hi": "अनुच्छेद 76"}, {"en": "Article 315", "hi": "अनुच्छेद 315"}, {"en": "Article 324", "hi": "अनुच्छेद 324"}, {"en": "Article 280", "hi": "अनुच्छेद 280"}], "opts": [{"en": "Article 76", "hi": "अनुच्छेद 76"}, {"en": "Article 315", "hi": "अनुच्छेद 315"}, {"en": "Article 324", "hi": "अनुच्छेद 324"}, {"en": "Article 280", "hi": "अनुच्छेद 280"}], "correct": {"0": "2", "1": "3", "2": "1", "3": "0"}},
+  {"id": "POL-117", "section": "Constitutional bodies", "sub": "Election Commission composition", "type": "mcq_single", "qEn": "The Chief Election Commissioner holds office for a term of:", "qHi": "मुख्य चुनाव आयुक्त का कार्यकाल कितने वर्ष का होता है?", "cEn": "6 years or until age 65, whichever is earlier", "cHi": "6 वर्ष या 65 वर्ष की आयु, जो भी पहले हो", "eEn": "Article 324 and the Election Commission (Conditions of Service of Election Commissioners and Transaction of Business) Act, 1991 provide that the CEC holds office for 6 years or until age 65, whichever is earlier.", "eHi": "अनुच्छेद 324 और चुनाव आयोग (चुनाव आयुक्तों की सेवा की शर्तें और कार्य संचालन) अधिनियम, 1991 प्रावधान करते हैं कि सीईसी 6 वर्ष या 65 वर्ष की आयु तक, जो भी पहले हो, पद धारण करता है।", "ref": "Article 324, Constitution of India; Election Commission Act, 1991", "opts": [{"en": "5 years", "hi": "5 वर्ष"}, {"en": "5 years or until age 60, whichever is earlier", "hi": "5 वर्ष या 60 वर्ष की आयु, जो भी पहले हो"}, {"en": "6 years", "hi": "6 वर्ष"}, {"en": "6 years or until age 65, whichever is earlier", "hi": "6 वर्ष या 65 वर्ष की आयु, जो भी पहले हो"}], "correct": 3}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

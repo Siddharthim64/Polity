@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — UP-specific Polity</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — UP-specific Polity</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-098", "section": "UP-specific Polity", "sub": "UP Legislative Council", "type": "mcq_single", "qEn": "Uttar Pradesh Legislative Council has how many members?", "qHi": "उत्तर प्रदेश विधान परिषद में कितने सदस्य हैं?", "cEn": "100", "cHi": "100", "eEn": "The Uttar Pradesh Legislative Council has 100 members.", "eHi": "उत्तर प्रदेश विधान परिषद में 100 सदस्य हैं।", "ref": "UP Legislative Council", "opts": [{"en": "100", "hi": "100"}, {"en": "403", "hi": "403"}, {"en": "200", "hi": "200"}, {"en": "75", "hi": "75"}], "correct": 0},
+  {"id": "POL-099", "section": "UP-specific Polity", "sub": "UP High Court", "type": "mcq_single", "qEn": "The High Court of Uttar Pradesh is located at:", "qHi": "उत्तर प्रदेश का उच्च न्यायालय कहां स्थित है:", "cEn": "Allahabad (Prayagraj)", "cHi": "इलाहाबाद (प्रयागराज)", "eEn": "The Allahabad High Court is the High Court of Uttar Pradesh, located at Allahabad (Prayagraj).", "eHi": "इलाहाबाद उच्च न्यायालय उत्तर प्रदेश का उच्च न्यायालय है, जो इलाहाबाद (प्रयागराज) में स्थित है।", "ref": "Allahabad High Court", "opts": [{"en": "Allahabad (Prayagraj)", "hi": "इलाहाबाद (प्रयागराज)"}, {"en": "Lucknow", "hi": "लखनऊ"}, {"en": "Kanpur", "hi": "कानपुर"}, {"en": "Varanasi", "hi": "वाराणसी"}], "correct": 0},
+  {"id": "POL-120", "section": "UP-specific Polity", "sub": "UP Legislature", "type": "mcq_single", "qEn": "The Uttar Pradesh Legislature is:", "qHi": "उत्तर प्रदेश विधानमंडल है:", "cEn": "Bicameral (Legislative Assembly and Legislative Council)", "cHi": "द्विसदनीय (विधान सभा और विधान परिषद)", "eEn": "Uttar Pradesh has a bicameral legislature consisting of the Vidhan Sabha (Legislative Assembly) and Vidhan Parishad (Legislative Council). It is one of the few states with a Legislative Council.", "eHi": "उत्तर प्रदेश में एक द्विसदनीय विधानमंडल है जिसमें विधान सभा और विधान परिषद शामिल हैं। यह कुछेक राज्यों में से एक है जिनमें विधान परिषद है।", "ref": "Uttar Pradesh Legislature", "opts": [{"en": "Unicameral (Legislative Assembly only)", "hi": "एकसदनीय (केवल विधान सभा)"}, {"en": "Bicameral (Legislative Assembly and Legislative Council)", "hi": "द्विसदनीय (विधान सभा और विधान परिषद)"}, {"en": "Presidential form", "hi": "राष्ट्रपति शासन रूप"}, {"en": "None of the above", "hi": "उपरोक्त में से कोई नहीं"}], "correct": 1}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

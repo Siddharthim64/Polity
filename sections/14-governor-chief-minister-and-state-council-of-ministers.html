@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Governor, Chief Minister, and State Council of Ministers</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Governor, Chief Minister, and State Council of Ministers</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-042", "section": "Governor, Chief Minister, and State Council of Ministers", "sub": "Governor", "type": "mcq_single", "qEn": "The Governor of a State is appointed by:", "qHi": "राज्य के राज्यपाल की नियुक्ति किसके द्वारा की जाती है?", "cEn": "The President", "cHi": "राष्ट्रपति", "eEn": "Article 155 states that the Governor of a State shall be appointed by the President by warrant under his hand and seal. The Governor holds office during the pleasure of the President (Article 156). The Governor is the constitutional head of the State.", "eHi": "अनुच्छेद 155 कहता है कि राज्य के राज्यपाल की नियुक्ति राष्ट्रपति द्वारा अपने हस्ताक्षर और मुहर के तहत वारंट द्वारा की जाएगी। राज्यपाल राष्ट्रपति की इच्छा पर पद धारण करता है (अनुच्छेद 156)। राज्यपाल राज्य का संवैधानिक प्रमुख है।", "ref": "Articles 153-156, Constitution of India", "opts": [{"en": "The President", "hi": "राष्ट्रपति"}, {"en": "The Chief Minister", "hi": "मुख्यमंत्री"}, {"en": "The State Legislature", "hi": "राज्य विधानमंडल"}, {"en": "The Prime Minister", "hi": "प्रधानमंत्री"}], "correct": 0},
+  {"id": "POL-043", "section": "Governor, Chief Minister, and State Council of Ministers", "sub": "Chief Minister", "type": "mcq_single", "qEn": "The Chief Minister of a State is appointed by:", "qHi": "राज्य के मुख्यमंत्री की नियुक्ति किसके द्वारा की जाती है?", "cEn": "The Governor", "cHi": "राज्यपाल", "eEn": "Article 164(1) states that the Chief Minister shall be appointed by the Governor and the other Ministers shall be appointed by the Governor on the advice of the Chief Minister. The Governor invites the leader of the majority party/coalition in the Legislative Assembly to form the government.", "eHi": "अनुच्छेद 164(1) कहता है कि मुख्यमंत्री की नियुक्ति राज्यपाल द्वारा की जाएगी और अन्य मंत्रियों की नियुक्ति राज्यपाल द्वारा मुख्यमंत्री की सलाह पर की जाएगी। राज्यपाल विधान सभा में बहुमत वाले दल/गठबंधन के नेता को सरकार बनाने के लिए आमंत्रित करता है।", "ref": "Article 164, Constitution of India", "opts": [{"en": "The Governor", "hi": "राज्यपाल"}, {"en": "The President", "hi": "राष्ट्रपति"}, {"en": "The State Legislature", "hi": "राज्य विधानमंडल"}, {"en": "The Supreme Court", "hi": "सर्वोच्च न्यायालय"}], "correct": 0},
+  {"id": "POL-075", "section": "Governor, Chief Minister, and State Council of Ministers", "sub": "Governor's discretionary power", "type": "mcq_single", "qEn": "Which of the following is a discretionary power of the Governor?", "qHi": "निम्नलिखित में से कौन-सा राज्यपाल का विवेकाधीन अधिकार है?", "cEn": "Reserving a Bill for President's consideration", "cHi": "राष्ट्रपति के विचार के लिए विधेयक को रोकना", "eEn": "Under Article 200, the Governor may reserve a Bill for the consideration of the President in his discretion.", "eHi": "अनुच्छेद 200 के तहत, राज्यपाल अपने विवेक में किसी विधेयक को राष्ट्रपति के विचार के लिए रोक सकता है।", "ref": "Article 200", "opts": [{"en": "Reserving a Bill for President's consideration", "hi": "राष्ट्रपति के विचार के लिए विधेयक को रोकना"}, {"en": "Appointing the Chief Minister", "hi": "मुख्यमंत्री की नियुक्ति करना"}, {"en": "Dismissing the Council of Ministers", "hi": "मंत्रिपरिषद को बर्खास्त करना"}, {"en": "Pardoning power", "hi": "क्षमादान शक्ति"}], "correct": 0},
+  {"id": "POL-076", "section": "Governor, Chief Minister, and State Council of Ministers", "sub": "Legislative Council creation", "type": "mcq_single", "qEn": "A State Legislative Council can be created or abolished by:", "qHi": "एक राज्य विधान परिषद का गठन या उन्मूलन किसके द्वारा किया जा सकता है:", "cEn": "Parliament on resolution by State Legislature", "cHi": "राज्य विधानमंडल के प्रस्ताव पर संसद द्वारा", "eEn": "Article 169 provides for the creation or abolition of Legislative Councils by Parliament on a resolution by the State Legislative Assembly.", "eHi": "अनुच्छेद 169 विधान परिषदों के निर्माण या उन्मूलन का प्रावधान करता है जो संसद द्वारा राज्य विधान सभा के प्रस्ताव पर किया जाता है।", "ref": "Article 169", "opts": [{"en": "Parliament on resolution by State Legislature", "hi": "राज्य विधानमंडल के प्रस्ताव पर संसद द्वारा"}, {"en": "President directly", "hi": "राष्ट्रपति द्वारा सीधे"}, {"en": "Governor", "hi": "राज्यपाल द्वारा"}, {"en": "Supreme Court", "hi": "सर्वोच्च न्यायालय द्वारा"}], "correct": 0}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Statutory, regulatory, executive, and quasi-judicial bodies</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Statutory, regulatory, executive, and quasi-judicial bodies</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-052", "section": "Statutory, regulatory, executive, and quasi-judicial bodies", "sub": "Statutory bodies", "type": "mcq_single", "qEn": "Which of the following is a non-statutory body?", "qHi": "निम्नलिखित में से कौन-सा गैर-विधिक निकाय है?", "cEn": "NITI Aayog", "cHi": "नीति आयोग", "eEn": "NITI Aayog (National Institution for Transforming India) was established in 2015 by a resolution of the Union Cabinet; it is neither constitutional nor statutory. CVC (CVC Act, 2003), CIC (RTI Act, 2005), and NHRC (Protection of Human Rights Act, 1993) are statutory bodies.", "eHi": "नीति आयोग (राष्ट्रीय परिवर्तनकारी भारत संस्थान) की स्थापना 2015 में संघ कैबिनेट के एक प्रस्ताव द्वारा की गई थी; यह न तो संवैधानिक है और न ही विधिक। सीवीसी (सीवीसी अधिनियम, 2003), सीआईसी (आरटीआई अधिनियम, 2005), और एनएचआरसी (मानवाधिकार संरक्षण अधिनियम, 1993) विधिक निकाय हैं।", "ref": "NITI Aayog resolution, 2015", "opts": [{"en": "Central Vigilance Commission", "hi": "केंद्रीय सतर्कता आयोग"}, {"en": "Central Information Commission", "hi": "केंद्रीय सूचना आयोग"}, {"en": "NITI Aayog", "hi": "नीति आयोग"}, {"en": "National Human Rights Commission", "hi": "राष्ट्रीय मानवाधिकार आयोग"}], "correct": 2},
+  {"id": "POL-089", "section": "Statutory, regulatory, executive, and quasi-judicial bodies", "sub": "Lokpal", "type": "mcq_single", "qEn": "Lokpal is a:", "qHi": "लोकपाल एक है:", "cEn": "Statutory body", "cHi": "विधिक निकाय", "eEn": "Lokpal is a statutory body established under the Lokpal and Lokayuktas Act, 2013.", "eHi": "लोकपाल एक विधिक निकाय है जो लोकपाल और लोकायुक्त अधिनियम, 2013 के तहत स्थापित किया गया है।", "ref": "Lokpal and Lokayuktas Act, 2013", "opts": [{"en": "Statutory body", "hi": "विधिक निकाय"}, {"en": "Constitutional body", "hi": "संवैधानिक निकाय"}, {"en": "Non-statutory body", "hi": "गैर-विधिक निकाय"}, {"en": "Executive body", "hi": "कार्यकारी निकाय"}], "correct": 0}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

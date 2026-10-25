@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Governor</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Governor</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-013", "section": "Governor", "sub": "Articles 153-156", "type": "mcq_single", "qEn": "Which one of the following is NOT correctly matched?", "qHi": "निम्नलिखित में से कौन-सा युग्म सही रूप से युग्मित नहीं है?", "cEn": "Article 155 — Removal of the Governor", "cHi": "अनुच्छेद 155 — राज्यपाल का निष्कासन", "eEn": "Article 153: Governor of each State. Article 154: Executive power of the State vested in the Governor. Article 155: Appointment of the Governor (by the President). Article 156: Term of office of the Governor (holds office during the pleasure of the President). So Article 155 is about Appointment, not Removal — making option C the incorrect match.", "eHi": "अनुच्छेद 153: प्रत्येक राज्य का राज्यपाल। अनुच्छेद 154: राज्य की कार्यकारी शक्ति राज्यपाल में निहित। अनुच्छेद 155: राज्यपाल की नियुक्ति (राष्ट्रपति द्वारा)। अनुच्छेद 156: राज्यपाल का पद का कार्यकाल (राष्ट्रपति की इच्छा पर पद धारण करता है)। इसलिए अनुच्छेद 155 नियुक्ति के बारे में है, निष्कासन के बारे में नहीं — अतः विकल्प C गलत युग्म है।", "ref": "Articles 153-156, Constitution of India", "opts": [{"en": "Article 153 — Office of the Governor", "hi": "अनुच्छेद 153 — राज्यपाल का पद"}, {"en": "Article 154 — Executive Authority of the Governor", "hi": "अनुच्छेद 154 — राज्यपाल की कार्यकारी अधिकारिता"}, {"en": "Article 155 — Removal of the Governor", "hi": "अनुच्छेद 155 — राज्यपाल का निष्कासन"}, {"en": "Article 156 — Term of the Governor", "hi": "अनुच्छेद 156 — राज्यपाल का कार्यकाल"}], "correct": 2}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

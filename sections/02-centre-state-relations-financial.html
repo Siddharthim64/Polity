@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Centre-State relations: financial</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Centre-State relations: financial</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-017", "section": "Centre-State relations: financial", "sub": "Contingency Fund", "type": "mcq_single", "qEn": "Which Article of the Indian Constitution is related to the Contingency Fund?", "qHi": "भारत के संविधान का कौन-सा अनुच्छेद आकस्मिक निधि से संबंधित है?", "cEn": "Article 267", "cHi": "अनुच्छेद 267", "eEn": "Article 267 provides for the Contingency Fund of India (at the Union level) and Contingency Fund of each State. Article 266 deals with the Consolidated Fund and Public Account of India; Article 265 with taxes not to be imposed save by authority of law.", "eHi": "अनुच्छेद 267 भारत की आकस्मिक निधि (संघ स्तर पर) और प्रत्येक राज्य की आकस्मिक निधि का प्रावधान करता है। अनुच्छेद 266 भारत की समेकित निधि और लोक लेखा से संबंधित है; अनुच्छेद 265 कानून के प्राधिकार के बिना कर न लगाने से।", "ref": "Article 267, Constitution of India", "opts": [{"en": "Article 265", "hi": "अनुच्छेद 265"}, {"en": "Article 266", "hi": "अनुच्छेद 266"}, {"en": "Article 267", "hi": "अनुच्छेद 267"}, {"en": "Article 268", "hi": "अनुच्छेद 268"}], "correct": 2}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

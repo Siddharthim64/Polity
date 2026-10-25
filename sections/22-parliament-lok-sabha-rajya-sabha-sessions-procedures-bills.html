@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Parliament: Lok Sabha, Rajya Sabha, sessions, procedures, bills</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Parliament: Lok Sabha, Rajya Sabha, sessions, procedures, bills</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-014", "section": "Parliament: Lok Sabha, Rajya Sabha, sessions, procedures, bills", "sub": "Composition of Parliament", "type": "mcq_single", "qEn": "The Parliament of India consists of:", "qHi": "भारत की संसद में क्या शामिल है?", "cEn": "The President and both Houses", "cHi": "राष्ट्रपति और दोनों सदन", "eEn": "Article 79 states that there shall be a Parliament for the Union which shall consist of the President and the two Houses: the Council of States (Rajya Sabha) and the House of the People (Lok Sabha). The President is an integral part of Parliament though not a member of either House.", "eHi": "अनुच्छेद 79 कहता है कि संघ के लिए एक संसद होगी जिसमें राष्ट्रपति और दो सदन शामिल होंगे: राज्य सभा और लोक सभा। राष्ट्रपति संसद का अभिन्न अंग है भले ही वह किसी सदन का सदस्य नहीं है।", "ref": "Article 79, Constitution of India", "opts": [{"en": "Lok Sabha and Rajya Sabha only", "hi": "केवल लोक सभा और राज्य सभा"}, {"en": "The President and both Houses", "hi": "राष्ट्रपति और दोनों सदन"}, {"en": "Lok Sabha only", "hi": "केवल लोक सभा"}, {"en": "Rajya Sabha only", "hi": "केवल राज्य सभा"}], "correct": 1},
+  {"id": "POL-035", "section": "Parliament: Lok Sabha, Rajya Sabha, sessions, procedures, bills", "sub": "Rajya Sabha", "type": "mcq_single", "qEn": "The Rajya Sabha is:", "qHi": "राज्य सभा है:", "cEn": "A permanent body, not subject to dissolution", "cHi": "एक स्थायी निकाय, भंग के अधीन नहीं", "eEn": "Article 83 states that the Council of States (Rajya Sabha) shall not be subject to dissolution; one-third of its members shall retire as soon as may be on the expiration of every second year. Lok Sabha is subject to dissolution.", "eHi": "अनुच्छेद 83 कहता है कि राज्य सभा भंग के अधीन नहीं होगी; इसके एक-तिहाई सदस्य हर दूसरे वर्ष की समाप्ति पर सेवानिवृत्त होंगे। लोक सभा भंग के अधीन है।", "ref": "Article 83, Constitution of India", "opts": [{"en": "Subject to dissolution", "hi": "भंग के अधीन"}, {"en": "A permanent body, not subject to dissolution", "hi": "एक स्थायी निकाय, भंग के अधीन नहीं"}, {"en": "Dissolved every 5 years", "hi": "हर 5 वर्ष में भंग"}, {"en": "Dissolved by the President", "hi": "राष्ट्रपति द्वारा भंग"}], "correct": 1},
+  {"id": "POL-036", "section": "Parliament: Lok Sabha, Rajya Sabha, sessions, procedures, bills", "sub": "Quorum", "type": "mcq_single", "qEn": "The quorum to constitute a sitting of either House of Parliament is:", "qHi": "संसद के किसी भी सदन की बैठक को वैध बनाने के लिए कोरम है:", "cEn": "One-tenth of the total number of members", "cHi": "सदस्यों की कुल संख्या का दसवां भाग", "eEn": "Article 100(3) states that the quorum to constitute a meeting of either House of Parliament shall be one-tenth of the total number of members of that House. If there is no quorum, the Chairman or Speaker shall adjourn the House.", "eHi": "अनुच्छेद 100(3) कहता है कि संसद के किसी भी सदन की बैठक का कोरम उस सदन के सदस्यों की कुल संख्या का दसवां भाग होगा। यदि कोरम नहीं है, तो अध्यक्ष या सभापति सदन की बैठक स्थगित कर देंगे।", "ref": "Article 100(3), Constitution of India", "opts": [{"en": "One-tenth of the total number of members", "hi": "सदस्यों की कुल संख्या का दसवां भाग"}, {"en": "One-half of the total number of members", "hi": "सदस्यों की कुल संख्या का आधा"}, {"en": "Two-thirds of the total number of members", "hi": "सदस्यों की कुल संख्या का दो-तिहाई"}, {"en": "One-fourth of the total number of members", "hi": "सदस्यों की कुल संख्या का चतुर्थांश"}], "correct": 0},
+  {"id": "POL-070", "section": "Parliament: Lok Sabha, Rajya Sabha, sessions, procedures, bills", "sub": "Money Bill certification", "type": "mcq_single", "qEn": "A Money Bill is certified by:", "qHi": "एक धन विधेयक किसके द्वारा प्रमाणित किया जाता है?", "cEn": "Speaker of Lok Sabha", "cHi": "लोक सभा के अध्यक्ष", "eEn": "The Speaker of Lok Sabha certifies whether a Bill is a Money Bill (Article 110).", "eHi": "लोक सभा के अध्यक्ष प्रमाणित करता है कि कोई विधेयक धन विधेयक है या नहीं (अनुच्छेद 110)।", "ref": "Article 110", "opts": [{"en": "Speaker of Lok Sabha", "hi": "लोक सभा के अध्यक्ष"}, {"en": "Chairman of Rajya Sabha", "hi": "राज्य सभा के सभापति"}, {"en": "President", "hi": "राष्ट्रपति"}, {"en": "Prime Minister", "hi": "प्रधानमंत्री"}], "correct": 0},
+  {"id": "POL-071", "section": "Parliament: Lok Sabha, Rajya Sabha, sessions, procedures, bills", "sub": "Joint sitting", "type": "mcq_single", "qEn": "A joint sitting of both Houses is presided over by:", "qHi": "दोनों सदनों की संयुक्त बैठक की अध्यक्षता कौन करता है?", "cEn": "Speaker of Lok Sabha", "cHi": "लोक सभा के अध्यक्ष", "eEn": "Article 108(1) provides that the Speaker of Lok Sabha presides over a joint sitting of both Houses.", "eHi": "अनुच्छेद 108(1) प्रावधान करता है कि लोक सभा के अध्यक्ष दोनों सदनों की संयुक्त बैठक की अध्यक्षता करते हैं।", "ref": "Article 108", "opts": [{"en": "Speaker of Lok Sabha", "hi": "लोक सभा के अध्यक्ष"}, {"en": "Chairman of Rajya Sabha", "hi": "राज्य सभा के सभापति"}, {"en": "President", "hi": "राष्ट्रपति"}, {"en": "Prime Minister", "hi": "प्रधानमंत्री"}], "correct": 0},
+  {"id": "POL-072", "section": "Parliament: Lok Sabha, Rajya Sabha, sessions, procedures, bills", "sub": "Rajya Sabha representation", "type": "mcq_single", "qEn": "Rajya Sabha represents:", "qHi": "राज्य सभा किसका प्रतिनिधित्व करती है?", "cEn": "The States and Union Territories", "cHi": "राज्यों और केंद्र शासित प्रदेशों का", "eEn": "Article 80 provides that Rajya Sabha consists of representatives of the States and Union Territories.", "eHi": "अनुच्छेद 80 प्रावधान करता है कि राज्य सभा राज्यों और केंद्र शासित प्रदेशों के प्रतिनिधियों से मिलकर बनती है।", "ref": "Article 80", "opts": [{"en": "The people directly", "hi": "लोगों का सीधा प्रतिनिधित्व"}, {"en": "The States and Union Territories", "hi": "राज्यों और केंद्र शासित प्रदेशों का"}, {"en": "The President only", "hi": "केवल राष्ट्रपति का"}, {"en": "Local bodies only", "hi": "केवल स्थानीय निकायों का"}], "correct": 1},
+  {"id": "POL-102", "section": "Parliament: Lok Sabha, Rajya Sabha, sessions, procedures, bills", "sub": "Composition of Parliament", "type": "mcq_multi", "qEn": "Which of the following statements about the Rajya Sabha are correct?", "qHi": "राज्य सभा के बारे में निम्न में से कौन से कथन सही हैं?", "cEn": "It is not subject to dissolution (a permanent chamber); One-third of its members retire every second year; Minimum age for membership is 30 years", "cHi": "यह विघटन के अधीन नहीं है (एक स्थायी सदन); इसके एक-तिहाई सदस्य हर दूसरे वर्ष सेवानिवृत्त होते हैं; सदस्यता के लिए न्यूनतम आयु 30 वर्ष है", "eEn": "The Rajya Sabha is a permanent body not subject to dissolution (Art 83); one-third of members retire every two years; minimum age is 30 years (Art 84). Members are indirectly elected by State Legislative Assembly members, not directly by the people.", "eHi": "राज्य सभा एक स्थायी निकाय है जो विघटन के अधीन नहीं है (अनुच्छेद 83); इसके एक-तिहाई सदस्य हर दो वर्ष में सेवानिवृत्त होते हैं; न्यूनतम आयु 30 वर्ष है (अनुच्छेद 84)। सदस्यों का चुनाव अप्रत्यक्ष रूप से राज्य विधान सभा के सदस्यों द्वारा होता है, सीधे लोगों द्वारा नहीं।", "ref": "Articles 83, 84, Constitution of India", "opts": [{"en": "It is not subject to dissolution (a permanent chamber)", "hi": "यह विघटन के अधीन नहीं है (एक स्थायी सदन)"}, {"en": "Members are directly elected by the people", "hi": "सदस्यों का चुनाव सीधे लोगों द्वारा किया जाता है"}, {"en": "One-third of its members retire every second year", "hi": "इसके एक-तिहाई सदस्य हर दूसरे वर्ष सेवानिवृत्त होते हैं"}, {"en": "Minimum age for membership is 30 years", "hi": "सदस्यता के लिए न्यूनतम आयु 30 वर्ष है"}], "correct": [0, 2, 3]}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

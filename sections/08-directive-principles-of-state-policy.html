@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Directive Principles of State Policy</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Directive Principles of State Policy</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-028", "section": "Directive Principles of State Policy", "sub": "Nature of DPSP", "type": "mcq_single", "qEn": "Directive Principles of State Policy are:", "qHi": "राज्य के नीति निदेशक तत्व हैं:", "cEn": "Non-justiciable", "cHi": "अन्यायोचित", "eEn": "Article 37 states that DPSP shall not be enforceable by any court, but they are fundamental in the governance of the country and it shall be the duty of the State to apply these principles in making laws.", "eHi": "अनुच्छेद 37 कहता है कि नीति निदेशक तत्व किसी भी न्यायालय द्वारा लागू करने योग्य नहीं होंगे, परंतु देश के शासन में ये मूलभूत हैं और कानून बनाने में इन सिद्धांतों को लागू करना राज्य का कर्तव्य होगा।", "ref": "Article 37, Constitution of India", "opts": [{"en": "Justiciable", "hi": "न्यायोचित"}, {"en": "Non-justiciable", "hi": "अन्यायोचित"}, {"en": "Partly justiciable", "hi": "आंशिक रूप से न्यायोचित"}, {"en": "Enforceable by courts", "hi": "न्यायालयों द्वारा लागू करने योग्य"}], "correct": 1},
+  {"id": "POL-029", "section": "Directive Principles of State Policy", "sub": "Uniform Civil Code", "type": "mcq_single", "qEn": "Uniform Civil Code is provided under:", "qHi": "समान नागरिक संहिता का प्रावधान किसके तहत है?", "cEn": "Article 44", "cHi": "अनुच्छेद 44", "eEn": "Article 44 states that the State shall endeavour to secure for the citizens a uniform civil code throughout the territory of India. It is a Directive Principle, non-justiciable, aimed at secularism and national integration.", "eHi": "अनुच्छेद 44 कहता है कि राज्य भारत के क्षेत्र में नागरिकों के लिए एक समान नागरिक संहिता सुनिश्चित करने का प्रयास करेगा। यह एक नीति निदेशक तत्व है, अन्यायोचित, जो धर्मनिरपेक्षता और राष्ट्रीय एकता के उद्देश्य से है।", "ref": "Article 44, Constitution of India", "opts": [{"en": "Article 40", "hi": "अनुच्छेद 40"}, {"en": "Article 44", "hi": "अनुच्छेद 44"}, {"en": "Article 48", "hi": "अनुच्छेद 48"}, {"en": "Article 51", "hi": "अनुच्छेद 51"}], "correct": 1},
+  {"id": "POL-065", "section": "Directive Principles of State Policy", "sub": "Equal justice and free legal aid", "type": "mcq_single", "qEn": "Equal justice and free legal aid are provided under:", "qHi": "समान न्याय और मुफ्त कानूनी सहायता का प्रावधान किसके तहत है:", "cEn": "Article 39A", "cHi": "अनुच्छेद 39ए", "eEn": "Article 39A provides for equal justice and free legal aid, added by the 42nd Amendment Act, 1976.", "eHi": "अनुच्छेद 39ए समान न्याय और मुफ्त कानूनी सहायता का प्रावधान करता है, जो 42वें संशोधन अधिनियम, 1976 द्वारा जोड़ा गया।", "ref": "Article 39A", "opts": [{"en": "Article 39A", "hi": "अनुच्छेद 39ए"}, {"en": "Article 39", "hi": "अनुच्छेद 39"}, {"en": "Article 41", "hi": "अनुच्छेद 41"}, {"en": "Article 42", "hi": "अनुच्छेद 42"}], "correct": 0},
+  {"id": "POL-101", "section": "Directive Principles of State Policy", "sub": "Nature and Classification", "type": "mcq_multi", "qEn": "Which of the following are Directive Principles of State Policy (and NOT Fundamental Rights)?", "qHi": "निम्न में से कौन से राज्य के नीति निदेशक तत्व हैं (और मूल अधिकार नहीं)?", "cEn": "Equal pay for equal work (Article 39(d)); Organisation of village panchayats (Article 40); Separation of judiciary from executive (Article 50)", "cHi": "समान कार्य के लिए समान वेतन (अनुच्छेद 39-घ); ग्राम पंचायतों का संगठन (अनुच्छेद 40); न्यायपालिका का कार्यपालिका से पृथक्करण (अनुच्छेद 50)", "eEn": "Articles 39(d), 40 and 50 are Directive Principles (Part IV). Article 21A (Right to Education) is a Fundamental Right inserted by the 86th Amendment, 2002 — so it is not a DPSP.", "eHi": "अनुच्छेद 39(घ), 40 और 50 राज्य के नीति निदेशक तत्व हैं (भाग IV)। अनुच्छेद 21ए (शिक्षा का अधिकार) 86वें संशोधन, 2002 द्वारा डाला गया एक मूल अधिकार है — अतः यह नीति निदेशक तत्व नहीं है।", "ref": "Part IV (Articles 36-51), Constitution of India; 86th Amendment Act, 2002", "opts": [{"en": "Equal pay for equal work (Article 39(d))", "hi": "समान कार्य के लिए समान वेतन (अनुच्छेद 39-घ)"}, {"en": "Right to Education (Article 21A)", "hi": "शिक्षा का अधिकार (अनुच्छेद 21ए)"}, {"en": "Organisation of village panchayats (Article 40)", "hi": "ग्राम पंचायतों का संगठन (अनुच्छेद 40)"}, {"en": "Separation of judiciary from executive (Article 50)", "hi": "न्यायपालिका का कार्यपालिका से पृथक्करण (अनुच्छेद 50)"}], "correct": [0, 2, 3]}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

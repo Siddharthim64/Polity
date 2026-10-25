@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Historical background of the Indian Constitution</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Historical background of the Indian Constitution</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-001", "section": "Historical background of the Indian Constitution", "sub": "Making of the Constitution and the Constituent Assembly", "type": "mcq_single", "qEn": "The Constituent Assembly of India first met on:", "qHi": "भारतीय संविधान सभा की पहली बैठक कब हुई थी?", "cEn": "9 December 1946", "cHi": "9 दिसंबर 1946", "eEn": "The Constituent Assembly held its first meeting on 9 December 1946 in the Constitution Hall (now the Central Hall of Parliament), New Delhi. Dr. Sachchidananda Sinha was the temporary Chairman. The Constitution was adopted and enacted on 26 November 1949 and came into force on 26 January 1950.", "eHi": "संविधान सभा की पहली बैठक 9 दिसंबर 1946 को नई दिल्ली में संविधान हॉल (अब संसद का केंद्रीय कक्ष) में आयोजित हुई थी। डॉ. सच्चिदानंद सिन्हा अस्थायी अध्यक्ष थे। संविधान को 26 नवंबर 1949 को अंगीकृत और अधिनियमित किया गया तथा यह 26 जनवरी 1950 को लागू हुआ।", "ref": "Constituent Assembly debates; Constitution of India (adoption 26 Nov 1949, commencement 26 Jan 1950)", "opts": [{"en": "9 December 1946", "hi": "9 दिसंबर 1946"}, {"en": "26 November 1949", "hi": "26 नवंबर 1949"}, {"en": "26 January 1950", "hi": "26 जनवरी 1950"}, {"en": "15 August 1947", "hi": "15 अगस्त 1947"}], "correct": 0},
+  {"id": "POL-002", "section": "Historical background of the Indian Constitution", "sub": "Making of the Constitution and the Constituent Assembly", "type": "mcq_single", "qEn": "The Constitution of India was adopted and enacted on:", "qHi": "भारत का संविधान कब अंगीकृत और अधिनियमित किया गया?", "cEn": "26 November 1949", "cHi": "26 नवंबर 1949", "eEn": "The Constitution was adopted and enacted by the Constituent Assembly on 26 November 1949 (celebrated as Constitution Day / Samvidhan Divas). It came into force on 26 January 1950 (Republic Day).", "eHi": "संविधान को संविधान सभा द्वारा 26 नवंबर 1949 को अंगीकृत और अधिनियमित किया गया (संविधान दिवस के रूप में मनाया जाता है)। यह 26 जनवरी 1950 (गणतंत्र दिवस) को लागू हुआ।", "ref": "Constitution of India", "opts": [{"en": "9 December 1946", "hi": "9 दिसंबर 1946"}, {"en": "26 November 1949", "hi": "26 नवंबर 1949"}, {"en": "26 January 1950", "hi": "26 जनवरी 1950"}, {"en": "15 August 1947", "hi": "15 अगस्त 1947"}], "correct": 1},
+  {"id": "POL-003", "section": "Historical background of the Indian Constitution", "sub": "Making of the Constitution and the Constituent Assembly", "type": "mcq_single", "qEn": "The Constitution of India came into force (commenced) on:", "qHi": "भारत का संविधान कब लागू हुआ (प्रारंभ हुआ)?", "cEn": "26 January 1950", "cHi": "26 जनवरी 1950", "eEn": "The Constitution came into force on 26 January 1950, chosen to commemorate the 1930 Purna Swaraj declaration. This day is celebrated as Republic Day.", "eHi": "संविधान 26 जनवरी 1950 को लागू हुआ, जिसे 1930 के पूर्ण स्वराज घोषणा की स्मृति में चुना गया। इस दिन को गणतंत्र दिवस के रूप में मनाया जाता है।", "ref": "Constitution of India", "opts": [{"en": "9 December 1946", "hi": "9 दिसंबर 1946"}, {"en": "26 November 1949", "hi": "26 नवंबर 1949"}, {"en": "26 January 1950", "hi": "26 जनवरी 1950"}, {"en": "15 August 1947", "hi": "15 अगस्त 1947"}], "correct": 2},
+  {"id": "POL-055", "section": "Historical background of the Indian Constitution", "sub": "Government of India Act 1935", "type": "mcq_single", "qEn": "Which feature was NOT provided by the Government of India Act, 1935?", "qHi": "भारत सरकार अधिनियम, 1935 ने निम्नलिखित में से कौन-सी विशेषता प्रदान नहीं की?", "cEn": "Dyarchy at the Centre", "cHi": "केंद्र में द्वैध शासन", "eEn": "The GOI Act, 1935 provided for a federal structure and provincial autonomy but abolished dyarchy in provinces and did not introduce responsible government at the Centre.", "eHi": "भारत सरकार अधिनियम, 1935 ने संघीय संरचना और प्रांतीय स्वायत्तता प्रदान की लेकिन प्रांतों में द्वैध शासन समाप्त कर दिया और केंद्र में जिम्मेदार सरकार शुरू नहीं की।", "ref": "Government of India Act, 1935", "opts": [{"en": "Federal structure", "hi": "संघीय संरचना"}, {"en": "Provincial autonomy", "hi": "प्रांतीय स्वायत्तता"}, {"en": "Dyarchy at the Centre", "hi": "केंद्र में द्वैध शासन"}, {"en": "Responsible government at the Centre", "hi": "केंद्र में जिम्मेदार सरकार"}], "correct": 2},
+  {"id": "POL-056", "section": "Historical background of the Indian Constitution", "sub": "Cabinet Mission Plan", "type": "mcq_single", "qEn": "The Cabinet Mission Plan of 1946 proposed a:", "qHi": "कैबिनेट मिशन योजना, 1946 ने एक का प्रस्ताव दिया:", "cEn": "Three-tier federal structure", "cHi": "तीन-स्तरीय संघीय संरचना", "eEn": "The Cabinet Mission Plan, 1946 proposed a three-tier federal structure: Union, Groups of provinces, and Provinces.", "eHi": "कैबिनेट मिशन योजना, 1946 ने एक तीन-स्तरीय संघीय संरचना प्रस्तावित की: संघ, प्रांतों के समूह और प्रांत।", "ref": "Cabinet Mission Plan, 1946", "opts": [{"en": "Unitary structure", "hi": "एकात्मक संरचना"}, {"en": "Three-tier federal structure", "hi": "तीन-स्तरीय संघीय संरचना"}, {"en": "Confederation", "hi": "परिसंघ"}, {"en": "Unitary with strong Centre", "hi": "मजबूत केंद्र के साथ एकात्मक"}], "correct": 1},
+  {"id": "POL-057", "section": "Historical background of the Indian Constitution", "sub": "Indian Independence Act", "type": "mcq_single", "qEn": "The Indian Independence Act, 1947 came into force on:", "qHi": "भारतीय स्वतंत्रता अधिनियम, 1947 कब लागू हुआ:", "cEn": "15 August 1947", "cHi": "15 अगस्त 1947", "eEn": "The Indian Independence Act, 1947 received royal assent on 18 July 1947 and came into force on 15 August 1947.", "eHi": "भारतीय स्वतंत्रता अधिनियम, 1947 को 18 जुलाई 1947 को राजकीय अनुमोदन मिला और यह 15 अगस्त 1947 को लागू हुआ।", "ref": "Indian Independence Act, 1947", "opts": [{"en": "15 August 1947", "hi": "15 अगस्त 1947"}, {"en": "26 November 1949", "hi": "26 नवंबर 1949"}, {"en": "26 January 1950", "hi": "26 जनवरी 1950"}, {"en": "3 June 1947", "hi": "3 जून 1947"}], "correct": 0},
+  {"id": "POL-103", "section": "Historical background of the Indian Constitution", "sub": "Commencement of the Constitution", "type": "assertion_reason", "qEn": "Assertion: The Constitution of India came into force on 26 January 1950.", "qHi": "अभिकथन: भारत का संविधान 26 जनवरी 1950 को लागू हुआ।", "cEn": "Both Assertion and Reason are true, and Reason is the correct explanation of Assertion", "cHi": "दोनों अभिकथन और कारण सत्य हैं, और कारण अभिकथन की सही व्याख्या है", "eEn": "The Constitution came into force on 26 January 1950 (Republic Day). The date was deliberately chosen to honour the 26 January 1930 Purna Swaraj resolution of the Indian National Congress.", "eHi": "संविधान 26 जनवरी 1950 को लागू हुआ (गणतंत्र दिवस)। इस तारीख को जानबूझकर भारतीय राष्ट्रीय कांग्रेस के 26 जनवरी 1930 के पूर्ण स्वराज प्रस्ताव के सम्मान में चुना गया था।", "ref": "Constitution of India (commencement 26 Jan 1950)", "assertionEn": "Assertion: The Constitution of India came into force on 26 January 1950.", "assertionHi": "अभिकथन: भारत का संविधान 26 जनवरी 1950 को लागू हुआ।", "reasonEn": "Reason: The date 26 January was chosen to commemorate the 1930 Purna Swaraj (complete independence) declaration.", "reasonHi": "कारण: 26 जनवरी की तारीख 1930 के पूर्ण स्वराज (पूर्ण स्वतंत्रता) घोषणा की स्मृति में चुनी गई थी।", "opts": [{"en": "Both A and R are true and R is the correct explanation of A", "hi": "A और R दोनों सत्य हैं और R, A की सही व्याख्या है"}, {"en": "Both A and R are true but R is NOT the correct explanation of A", "hi": "A और R दोनों सत्य हैं परंतु R, A की सही व्याख्या नहीं है"}, {"en": "A is true but R is false", "hi": "A सत्य है परंतु R असत्य है"}, {"en": "A is false but R is true", "hi": "A असत्य है परंतु R सत्य है"}, {"en": "Both A and R are false", "hi": "A और R दोनों असत्य हैं"}], "correct": 0}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

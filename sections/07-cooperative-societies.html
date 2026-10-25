@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Cooperative societies</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Cooperative societies</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-051", "section": "Cooperative societies", "sub": "Constitutional provisions", "type": "mcq_single", "qEn": "Cooperative societies were given constitutional status by:", "qHi": "सहकारी समितियों को संवैधानिक दर्जा किसके द्वारा दिया गया?", "cEn": "97th Amendment Act, 2011", "cHi": "97वां संशोधन अधिनियम, 2011", "eEn": "The 97th Constitution Amendment Act, 2011 inserted Article 43B (promotion of cooperative societies) and Part IXB (The Cooperative Societies) into the Constitution. It also added 'cooperative societies' to Article 19(1)(c) as a Fundamental Right to form cooperative societies.", "eHi": "97वें संविधान संशोधन अधिनियम, 2011 ने संविधान में अनुच्छेद 43बी (सहकारी समितियों को बढ़ावा देना) और भाग IX-बी (सहकारी समितियां) डाले। इसने अनुच्छेद 19(1)(ग) में 'सहकारी समितियां' भी जोड़ी जो सहकारी समितियां बनाने का एक मूल अधिकार है।", "ref": "97th Constitution Amendment Act, 2011; Article 43B; Part IXB", "opts": [{"en": "97th Amendment Act, 2011", "hi": "97वां संशोधन अधिनियम, 2011"}, {"en": "73rd Amendment Act, 1992", "hi": "73वां संशोधन अधिनियम, 1992"}, {"en": "74th Amendment Act, 1992", "hi": "74वां संशोधन अधिनियम, 1992"}, {"en": "42nd Amendment Act, 1976", "hi": "42वां संशोधन अधिनियम, 1976"}], "correct": 0},
+  {"id": "POL-091", "section": "Cooperative societies", "sub": "Part IXB", "type": "mcq_single", "qEn": "Part IXB of the Constitution deals with:", "qHi": "संविधान का भाग IX-बी किससे संबंधित है:", "cEn": "Cooperative societies", "cHi": "सहकारी समितियां", "eEn": "Part IXB (added by the 97th Amendment) deals with Cooperative Societies.", "eHi": "भाग IX-बी (97वें संशोधन द्वारा जोड़ा गया) सहकारी समितियों से संबंधित है।", "ref": "Part IXB", "opts": [{"en": "Cooperative societies", "hi": "सहकारी समितियां"}, {"en": "Panchayats", "hi": "पंचायतें"}, {"en": "Municipalities", "hi": "नगर पालिकाएं"}, {"en": "Tribal areas", "hi": "आदिवासी क्षेत्र"}], "correct": 0}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

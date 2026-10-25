@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Parliamentary committees and procedures</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Parliamentary committees and procedures</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-018", "section": "Parliamentary committees and procedures", "sub": "Money Bill and Bills", "type": "mcq_single", "qEn": "Which of the following Bills cannot be first introduced in the Rajya Sabha?", "qHi": "निम्नलिखित में से कौन-सा विधेयक पहले राज्य सभा में प्रस्तुत नहीं किया जा सकता?", "cEn": "Money Bill", "cHi": "धन विधेयक", "eEn": "A Money Bill can only be introduced in the Lok Sabha on the recommendation of the President and cannot be first introduced in the Rajya Sabha (Article 117). Ordinary Bills, Constitutional Amendment Bills, and State Re-organisation Bills may be introduced in either House.", "eHi": "एक धन विधेयक केवल लोक सभा में राष्ट्रपति की सिफारिश पर पेश किया जा सकता है और इसे पहले राज्य सभा में प्रस्तुत नहीं किया जा सकता (अनुच्छेद 117)। साधारण विधेयक, संविधान संशोधन विधेयक और राज्य पुनर्गठन विधेयक किसी भी सदन में पेश किए जा सकते हैं।", "ref": "Article 117, Constitution of India", "opts": [{"en": "Ordinary Bill", "hi": "साधारण विधेयक"}, {"en": "Constitutional Amendment Bill", "hi": "संविधान संशोधन विधेयक"}, {"en": "State Re-organisation Bill", "hi": "राज्य पुनर्गठन विधेयक"}, {"en": "Money Bill", "hi": "धन विधेयक"}], "correct": 3},
+  {"id": "POL-119", "section": "Parliamentary committees and procedures", "sub": "Parliamentary committees", "type": "mcq_single", "qEn": "Which parliamentary committee examines the report of the Comptroller and Auditor General of India?", "qHi": "कौन सी संसदीय समिति भारत के नियंत्रक और महालेखा परीक्षक (सीएजी) की रिपोर्ट की जांच करती है?", "cEn": "Public Accounts Committee", "cHi": "लोक लेखा समिति", "eEn": "The Public Accounts Committee (PAC) examines the audit reports of the CAG and reports on whether public money has been spent as sanctioned by Parliament.", "eHi": "लोक लेखा समिति (पीएसी) सीएजी के लेखा परीक्षण रिपोर्टों की जांच करती है और रिपोर्ट करती है कि क्या सार्वजनिक धन Parliament द्वारा मंजूरी के अनुसार खर्च किया गया है।", "ref": "Public Accounts Committee, Constitution of India", "opts": [{"en": "Estimates Committee", "hi": "अनुमान समिति"}, {"en": "Committee on Public Undertakings", "hi": "सार्वजनिक उपक्रम समिति"}, {"en": "Privileges Committee", "hi": "विशेषाधिकार समिति"}, {"en": "Public Accounts Committee", "hi": "लोक लेखा समिति"}], "correct": 3}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

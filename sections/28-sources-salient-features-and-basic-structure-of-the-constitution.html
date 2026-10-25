@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Sources, salient features, and basic structure of the Constitution</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Sources, salient features, and basic structure of the Constitution</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-020", "section": "Sources, salient features, and basic structure of the Constitution", "sub": "Sources of the Constitution", "type": "mcq_single", "qEn": "The Parliamentary form of government in India is borrowed from:", "qHi": "भारत में संसदीय सरकार की प्रणाली किससे ली गई है?", "cEn": "United Kingdom", "cHi": "यूनाइटेड किंगडम", "eEn": "India borrowed the parliamentary form of government, rule of law, legislative procedure, single citizenship, and cabinet system from the United Kingdom.", "eHi": "भारत ने यूनाइटेड किंगडम से संसदीय सरकार की प्रणाली, विधि का शासन, विधायी प्रक्रिया, एकल नागरिकता और मंत्रिमंडलीय प्रणाली ली है।", "ref": "Sources of the Constitution of India", "opts": [{"en": "United Kingdom", "hi": "यूनाइटेड किंगडम"}, {"en": "United States", "hi": "संयुक्त राज्य अमेरिका"}, {"en": "Ireland", "hi": "आयरलैंड"}, {"en": "Canada", "hi": "कनाडा"}], "correct": 0},
+  {"id": "POL-021", "section": "Sources, salient features, and basic structure of the Constitution", "sub": "Salient features", "type": "mcq_single", "qEn": "Which of the following is NOT a salient feature of the Indian Constitution?", "qHi": "भारतीय संविधान की निम्नलिखित में से कौन-सी उल्लेखनीय विशेषता नहीं है?", "cEn": "Presidential form of government", "cHi": "राष्ट्रपति प्रणाली की सरकार", "eEn": "India has a Parliamentary form of government, not Presidential. The President is a nominal head; real executive power vests in the Council of Ministers headed by the Prime Minister.", "eHi": "भारत में संसदीय सरकार की प्रणाली है, राष्ट्रपति प्रणाली नहीं। राष्ट्रपति नाममात्र का प्रमुख है; वास्तविक कार्यकारी शक्ति प्रधानमंत्री की अध्यक्षता में मंत्रिपरिषद में निहित है।", "ref": "Salient features of the Constitution of India", "opts": [{"en": "Written Constitution", "hi": "लिखित संविधान"}, {"en": "Federal System", "hi": "संघीय प्रणाली"}, {"en": "Presidential form of government", "hi": "राष्ट्रपति प्रणाली की सरकार"}, {"en": "Fundamental Rights", "hi": "मूल अधिकार"}], "correct": 2}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

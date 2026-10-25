@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Citizenship</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Citizenship</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-004", "section": "Citizenship", "sub": "Constitutional provisions (Articles 5-11, Part II)", "type": "mcq_single", "qEn": "Which Part of the Constitution of India deals with Citizenship?", "qHi": "भारतीय संविधान का कौन-सा भाग नागरिकता से संबंधित है?", "cEn": "Part II", "cHi": "भाग II", "eEn": "Citizenship is dealt with in Part II (Articles 5 to 11) of the Constitution. Part I deals with the Union and its territory (Articles 1-4); Part III deals with Fundamental Rights; Part IV with Directive Principles.", "eHi": "नागरिकता संविधान के भाग II (अनुच्छेद 5 से 11) में निपटाया गया है। भाग I संघ और इसका क्षेत्रीय विस्तार (अनुच्छेद 1-4) से संबंधित है; भाग III मूल अधिकारों से; भाग IV निदेशक तत्वों से।", "ref": "Articles 5-11, Part II of the Constitution of India", "opts": [{"en": "Part I", "hi": "भाग I"}, {"en": "Part II", "hi": "भाग II"}, {"en": "Part III", "hi": "भाग III"}, {"en": "Part IV", "hi": "भाग IV"}], "correct": 1},
+  {"id": "POL-059", "section": "Citizenship", "sub": "Citizenship at commencement", "type": "mcq_single", "qEn": "Citizenship at the commencement of the Constitution is provided under:", "qHi": "संविधान के प्रारंभ पर नागरिकता का प्रावधान किसके तहत है:", "cEn": "Article 5", "cHi": "अनुच्छेद 5", "eEn": "Article 5 provides for citizenship at the commencement of the Constitution.", "eHi": "अनुच्छेद 5 संविधान के प्रारंभ पर नागरिकता का प्रावधान करता है।", "ref": "Article 5, Part II", "opts": [{"en": "Article 5", "hi": "अनुच्छेद 5"}, {"en": "Article 6", "hi": "अनुच्छेद 6"}, {"en": "Article 7", "hi": "अनुच्छेद 7"}, {"en": "Article 11", "hi": "अनुच्छेद 11"}], "correct": 0},
+  {"id": "POL-111", "section": "Citizenship", "sub": "Modes of acquiring citizenship", "type": "mcq_single", "qEn": "Citizenship of India by naturalisation is granted under which provision?", "qHi": "भारत की नागरिकता प्राकृतिकीकरण द्वारा किस प्रावधान के तहत दी जाती है?", "cEn": "Article 11", "cHi": "अनुच्छेद 11", "eEn": "Article 11 empowers Parliament to make any provision with respect to the acquisition and termination of citizenship and all other matters relating to citizenship. The Citizenship Act, 1955 (Section 6) deals with naturalisation.", "eHi": "अनुच्छेद 11 Parliament को नागरिकता के अर्जन और समाप्ति तथा नागरिकता से संबंधित सभी अन्य मामलों के संबंध में कोई भी प्रावधान करने का अधिकार देता है। नागरिकता अधिनियम, 1955 (धारा 6) प्राकृतिकीकरण से संबंधित है।", "ref": "Article 11, Constitution of India; Citizenship Act, 1955", "opts": [{"en": "Article 11", "hi": "अनुच्छेद 11"}, {"en": "Article 9", "hi": "अनुच्छेद 9"}, {"en": "Article 10", "hi": "अनुच्छेद 10"}, {"en": "Article 12", "hi": "अनुच्छेद 12"}], "correct": 0}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

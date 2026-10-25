@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Emergency provisions</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Emergency provisions</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-047", "section": "Emergency provisions", "sub": "Types of Emergency", "type": "mcq_single", "qEn": "Which Article deals with the Proclamation of National Emergency?", "qHi": "कौन-सा अनुच्छेद राष्ट्रीय आपातकाल की घोषणा से संबंधित है?", "cEn": "Article 352", "cHi": "अनुच्छेद 352", "eEn": "Article 352 deals with National Emergency, which can be proclaimed by the President if satisfied that a grave emergency exists whereby the security of India or any part thereof is threatened by war, external aggression, or armed rebellion. Article 356 deals with President's Rule (State Emergency); Article 360 with Financial Emergency.", "eHi": "अनुच्छेद 352 राष्ट्रीय आपातकाल से संबंधित है, जिसे राष्ट्रपति तब घोषित कर सकता है जब वे संतुष्ट हों कि भारत या उसके किसी भाग की सुरक्षा युद्ध, बाहरी आक्रमण या सशस्त्र विद्रोह से खतरे में है। अनुच्छेद 356 राष्ट्रपति शासन (राज्य आपातकाल) से संबंधित है; अनुच्छेद 360 वित्तीय आपातकाल से।", "ref": "Articles 352, 356, 360, Constitution of India", "opts": [{"en": "Article 352", "hi": "अनुच्छेद 352"}, {"en": "Article 356", "hi": "अनुच्छेद 356"}, {"en": "Article 360", "hi": "अनुच्छेद 360"}, {"en": "Article 356 and 360", "hi": "अनुच्छेद 356 और 360"}], "correct": 0},
+  {"id": "POL-082", "section": "Emergency provisions", "sub": "President's Rule", "type": "mcq_single", "qEn": "President's Rule in a State is imposed under:", "qHi": "एक राज्य में राष्ट्रपति शासन किसके तहत लगाया जाता है:", "cEn": "Article 356", "cHi": "अनुच्छेद 356", "eEn": "Article 356 provides for the imposition of President's Rule (State Emergency) in a State.", "eHi": "अनुच्छेद 356 एक राज्य में राष्ट्रपति शासन (राज्य आपातकाल) लगाने का प्रावधान करता है।", "ref": "Article 356", "opts": [{"en": "Article 356", "hi": "अनुच्छेद 356"}, {"en": "Article 352", "hi": "अनुच्छेद 352"}, {"en": "Article 360", "hi": "अनुच्छेद 360"}, {"en": "Article 355", "hi": "अनुच्छेद 355"}], "correct": 0},
+  {"id": "POL-083", "section": "Emergency provisions", "sub": "Financial Emergency", "type": "mcq_single", "qEn": "Financial Emergency is provided under:", "qHi": "वित्तीय आपातकाल का प्रावधान किसके तहत है:", "cEn": "Article 360", "cHi": "अनुच्छेद 360", "eEn": "Article 360 provides for a Financial Emergency if the President is satisfied that the financial stability of India is threatened.", "eHi": "अनुच्छेद 360 वित्तीय आपातकाल का प्रावधान करता है यदि राष्ट्रपति संतुष्ट है कि भारत की वित्तीय स्थिरता खतरे में है।", "ref": "Article 360", "opts": [{"en": "Article 360", "hi": "अनुच्छेद 360"}, {"en": "Article 352", "hi": "अनुच्छेद 352"}, {"en": "Article 356", "hi": "अनुच्छेद 356"}, {"en": "Article 358", "hi": "अनुच्छेद 358"}], "correct": 0},
+  {"id": "POL-114", "section": "Emergency provisions", "sub": "National Emergency", "type": "mcq_single", "qEn": "A National Emergency under Article 352 can be proclaimed on the ground of:", "qHi": "अनुच्छेद 352 के तहत राष्ट्रीय आपातकाल किस आधार पर घोषित किया जा सकता है?", "cEn": "War, external aggression or armed rebellion", "cHi": "युद्ध, बाहरी आक्रमण या सशस्त्र विद्रोह", "eEn": "Article 352(1) allows the President to proclaim a National Emergency if satisfied that the security of India or any part is threatened by war, external aggression or armed rebellion.", "eHi": "अनुच्छेद 352(1) राष्ट्रपति को राष्ट्रीय आपातकाल घोषित करने की अनुमति देता है यदि वह संतुष्ट है कि भारत या उसके किसी भाग की सुरक्षा युद्ध, बाहरी आक्रमण या सशस्त्र विद्रोह से खतरे में है।", "ref": "Article 352, Constitution of India", "opts": [{"en": "War only", "hi": "केवल युद्ध"}, {"en": "External aggression only", "hi": "केवल बाहरी आक्रमण"}, {"en": "War, external aggression or armed rebellion", "hi": "युद्ध, बाहरी आक्रमण या सशस्त्र विद्रोह"}, {"en": "Financial instability", "hi": "वित्तीय अस्थिरता"}], "correct": 2}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

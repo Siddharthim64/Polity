@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Parliamentary privileges and anti-defection law</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Parliamentary privileges and anti-defection law</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-037", "section": "Parliamentary privileges and anti-defection law", "sub": "Anti-defection", "type": "mcq_single", "qEn": "The anti-defection law is contained in:", "qHi": "दल-बदल विरोधी कानून किसमें निहित है?", "cEn": "Tenth Schedule", "cHi": "दसवीं अनुसूची", "eEn": "The Tenth Schedule (added by the 52nd Amendment Act, 1985) contains provisions for disqualification on the ground of defection. A member is disqualified if they voluntarily give up membership of their party or vote/abstain contrary to the party whip without permission.", "eHi": "दसवीं अनुसूची (52वें संशोधन अधिनियम, 1985 द्वारा जोड़ी गई) में दल-बदल के आधार पर अयोग्यता के प्रावधान हैं। एक सदस्य अयोग्य ठहराया जाता है यदि वे अपनी पार्टी की सदस्यता स्वेच्छा से छोड़ देते हैं या पार्टी व्हिप के बिना वोट देते हैं/अनुपस्थित रहते हैं।", "ref": "Tenth Schedule; 52nd Amendment Act, 1985", "opts": [{"en": "Tenth Schedule", "hi": "दसवीं अनुसूची"}, {"en": "Ninth Schedule", "hi": "नौवीं अनुसूची"}, {"en": "Eleventh Schedule", "hi": "ग्यारहवीं अनुसूची"}, {"en": "Twelfth Schedule", "hi": "बारहवीं अनुसूची"}], "correct": 0}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

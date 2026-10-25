@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>UPPCS 2026 — Indian Polity Chapter Practice</title>
+  <meta name="description" content="Executive bilingual Indian Polity chapter-wise practice for UPPCS Prelims 2026. English & Hindi with authoritative explanations.">
+
+  <!-- Google Fonts: Inter & Noto Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+            hindi: ['"Noto Sans Devanagari"', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Mobile-first touch & typography normalization */
+    * { -webkit-tap-highlight-color: transparent; }
+
+    /* Sleek slim scrollbar */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    /* Hide scrollbars for clean horizontal slider */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .opt-card {
+      transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      min-height: 52px;
+    }
+  </style>
+</head>
+
+<body class="bg-[#f8fafc] text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-indigo-100 selection:text-indigo-900">
+
+  <!-- ================= 1. EXECUTIVE TOPBAR ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 h-14 flex items-center justify-between px-3 sm:px-6">
+    <div class="flex items-center gap-3">
+      <!-- Mobile Drawer Button -->
+      <button id="menuBtn" class="lg:hidden w-9 h-9 rounded-lg border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-slate-100 active:bg-slate-200" aria-label="Open syllabus chapters">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+
+      <!-- Desktop Sidebar Toggle Button -->
+      <button id="sidebarToggleBtn" class="hidden lg:flex w-8 h-8 rounded-lg border border-slate-200 text-slate-600 items-center justify-center hover:bg-slate-100 hover:text-slate-900 transition" title="Toggle Chapters Panel">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h10M4 18h16"></path></svg>
+      </button>
+
+      <!-- Brand -->
+      <div class="flex items-center gap-2.5 select-none">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-brand-700 to-indigo-500 text-white font-extrabold text-xs flex items-center justify-center shadow-xs">
+          UP
+        </div>
+        <div>
+          <span class="font-bold text-sm sm:text-base text-slate-900 tracking-tight">UPPCS <span class="text-brand-600 font-semibold">2026</span></span>
+          <span class="hidden sm:inline-block text-[11px] font-medium text-slate-400 ml-1.5 border-l border-slate-200 pl-2">Polity Practice</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Controls: Bookmark counter + Language switcher -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <!-- Bookmark Quick Filter Button -->
+      <button id="bookmarkFilterBtn" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 hover:border-amber-300 hover:bg-amber-50/50 transition" title="View Bookmarked Questions">
+        <svg id="bookmarkFilterIcon" class="w-3.5 h-3.5 text-slate-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+        <span class="hidden xs:inline">Saved</span>
+        <span id="savedBadge" class="bg-slate-100 text-slate-600 text-[10px] px-1.5 py-0.2 rounded-full font-bold">0</span>
+      </button>
+
+      <!-- Language Selector -->
+      <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-medium" role="group" aria-label="Language selection">
+        <button class="lang-btn active px-2.5 py-1 rounded-md text-slate-600 transition" data-lang="both">Dual</button>
+        <button class="lang-btn px-2.5 py-1 rounded-md text-slate-600 transition" data-lang="en">EN</button>
+        <button class="lang-btn px-2.5 py-1 rounded-md font-hindi text-slate-600 transition" data-lang="hi">हिन्दी</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 2. WORKSPACE ================= -->
+  <div class="flex-1 flex overflow-hidden relative">
+
+    <!-- Mobile Drawer Backdrop -->
+    <div id="drawerOverlay" class="fixed inset-0 bg-slate-900/30 backdrop-blur-xs z-40 hidden lg:hidden transition-opacity"></div>
+
+    <!-- ================= SIDEBAR (CHAPTERS) ================= -->
+    <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-72 bg-white border-r border-slate-200 z-50 flex flex-col overscroll-contain -translate-x-full lg:translate-x-0 transition-transform duration-200 ease-out shadow-lg lg:shadow-none">
+      <!-- Sidebar Header -->
+      <div class="p-4 border-b border-slate-100 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-600">Chapters & Modules</span>
+        </div>
+        <button id="closeSidebarBtn" class="lg:hidden text-slate-400 hover:text-slate-700 w-7 h-7 flex items-center justify-center">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- Chapter Search / Filter -->
+      <div class="p-2 border-b border-slate-100">
+        <div class="relative">
+          <input type="text" id="chapterSearch" placeholder="Search chapter..." class="w-full text-xs pl-8 pr-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 focus:outline-none focus:border-brand-500 focus:bg-white transition">
+          <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </div>
+      </div>
+
+      <!-- Chapter Navigation List -->
+      <nav id="chapterList" class="flex-1 overflow-y-auto overscroll-contain p-2 space-y-1"></nav>
+
+      <!-- Sidebar Footer Status -->
+      <div class="p-3 border-t border-slate-100 bg-slate-50 flex items-center justify-between text-xs text-slate-500">
+        <span class="font-medium">Total Questions</span>
+        <span id="sidebarTotalQuestions" class="font-bold text-slate-700 font-mono">0</span>
+      </div>
+    </aside>
+
+    <!-- ================= MAIN QUESTION ARENA ================= -->
+    <main class="flex-1 flex flex-col overflow-y-auto bg-[#f8fafc] overscroll-contain min-w-0">
+
+      <!-- QUESTION JUMP PILL NAVIGATOR (STICKY BAR) -->
+      <div class="sticky top-0 z-20 bg-white/95 backdrop-blur-xs border-b border-slate-200 px-3 sm:px-6 py-2.5">
+        <div class="max-w-3xl mx-auto flex items-center justify-between gap-3">
+          <!-- Active chapter indicator -->
+          <div class="flex items-center gap-2 min-w-0">
+            <span id="activeChapterPill" class="text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200/80 px-2.5 py-0.5 rounded-md truncate max-w-[130px] sm:max-w-none">
+              Preamble
+            </span>
+            <span class="text-xs text-slate-400 hidden sm:inline">&bull;</span>
+            <span id="activeQuestionNum" class="text-xs font-semibold text-slate-600 shrink-0">Q 1 of 5</span>
+          </div>
+
+          <!-- Horizontal Question Jump Pills (1..N) -->
+          <div id="questionPillTrack" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 px-1 max-w-[55%] sm:max-w-[65%]">
+            <!-- Dynamically injected circular pills -->
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN CARD CONTAINER -->
+      <div class="max-w-3xl w-full mx-auto p-3.5 sm:p-6 lg:p-8 flex flex-col">
+
+        <!-- Quiz Area -->
+        <div id="quizContainer" class="space-y-4 sm:space-y-5">
+
+          <!-- Card Header & Bookmark -->
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <span id="qTypeBadge" class="text-[11px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 border border-slate-200/80 px-2 py-0.5 rounded">
+                Single Choice
+              </span>
+              <span id="difficultyBadge" class="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-1.5 py-0.5 rounded">
+                UPPCS Prelims
+              </span>
+            </div>
+
+            <!-- Bookmark Button -->
+            <button id="btnBookmark" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 hover:border-amber-300 hover:bg-amber-50/60 transition group" title="Bookmark for revision">
+              <svg id="bookmarkIcon" class="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-500 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+              <span id="bookmarkText">Bookmark</span>
+            </button>
+          </div>
+
+          <!-- Assertion-Reason Format Box -->
+          <div id="arCard" class="hidden bg-slate-50 border border-slate-200/90 rounded-xl p-3.5 sm:p-4 space-y-3">
+            <div class="space-y-1">
+              <div class="flex items-center gap-1.5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-600 bg-slate-200 px-1.5 py-0.5 rounded">Assertion (A)</span>
+              </div>
+              <p id="arAssertionEn" class="text-sm font-semibold text-slate-800 leading-relaxed"></p>
+              <p id="arAssertionHi" class="text-sm font-hindi text-slate-700 leading-relaxed"></p>
+            </div>
+            <div class="space-y-1 pt-2.5 border-t border-slate-200">
+              <div class="flex items-center gap-1.5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-600 bg-slate-200 px-1.5 py-0.5 rounded">Reason (R)</span>
+              </div>
+              <p id="arReasonEn" class="text-sm font-semibold text-slate-800 leading-relaxed"></p>
+              <p id="arReasonHi" class="text-sm font-hindi text-slate-700 leading-relaxed"></p>
+            </div>
+          </div>
+
+          <!-- Standard Question Stem -->
+          <div id="standardQuestionStem" class="space-y-1.5">
+            <h3 id="stemEn" class="text-base sm:text-lg font-bold text-slate-900 leading-snug tracking-tight"></h3>
+            <p id="stemHi" class="text-sm sm:text-base font-hindi font-medium text-slate-600 leading-relaxed"></p>
+          </div>
+
+          <!-- Options Area -->
+          <div id="optionsArea" class="space-y-2.5 pt-1"></div>
+
+          <!-- Matching List Area -->
+          <div id="matchArea" class="hidden space-y-2.5 pt-1"></div>
+
+          <!-- Concise Authoritative Explanation Box -->
+          <div id="explanationBox" class="hidden rounded-xl border p-4 sm:p-4.5 space-y-2.5 transition-all">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <div class="flex items-center gap-1.5 font-bold text-xs" id="expStatusText"></div>
+              <span id="expTag" class="text-[10px] uppercase font-bold px-2 py-0.5 rounded"></span>
+            </div>
+            <p id="expEn" class="text-xs sm:text-sm text-slate-800 leading-relaxed"></p>
+            <p id="expHi" class="text-xs sm:text-sm font-hindi text-slate-700 leading-relaxed border-t border-slate-200/60 pt-2"></p>
+            <div class="pt-2 text-[11px] text-slate-500 font-medium flex items-center gap-1.5 border-t border-slate-200/60">
+              <svg class="w-3.5 h-3.5 text-brand-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              <span>Verified Source: <strong id="expRef" class="text-slate-700 font-semibold">M. Laxmikanth / Bare Act</strong></span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================= 3. CHAPTER MASTERY / SCORECARD ================= -->
+        <div id="resultContainer" class="hidden bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 text-center my-auto shadow-xs">
+          <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto mb-3 border border-brand-100">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900">Chapter Complete!</h3>
+          <p id="resSubtext" class="text-xs sm:text-sm text-slate-500 mt-0.5">Here is your chapter performance summary.</p>
+
+          <!-- Metrics Bento Grid -->
+          <div class="grid grid-cols-3 gap-2.5 sm:gap-3 max-w-sm mx-auto my-6 text-center">
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+              <span class="text-[10px] uppercase font-bold text-slate-400">Score</span>
+              <div id="resScore" class="text-base sm:text-lg font-extrabold text-slate-900 mt-0.5">0 / 0</div>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-900">
+              <span class="text-[10px] uppercase font-bold text-emerald-600">Correct</span>
+              <div id="resCorrect" class="text-base sm:text-lg font-extrabold text-emerald-700 mt-0.5">0</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+              <span class="text-[10px] uppercase font-bold text-slate-400">Accuracy</span>
+              <div id="resAccuracy" class="text-base sm:text-lg font-extrabold text-slate-900 mt-0.5">0%</div>
+            </div>
+          </div>
+
+          <!-- Targeted Revision Topics List -->
+          <div id="revisionWrapper" class="text-left bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 mb-6 hidden">
+            <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+              Questions to Revise:
+            </h4>
+            <ul id="revisionList" class="space-y-1.5 text-xs text-slate-600"></ul>
+          </div>
+
+          <div class="flex items-center justify-center gap-3">
+            <button id="btnRetryChapter" class="px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold shadow-xs transition">
+              Restart Chapter
+            </button>
+            <button id="btnNextChapter" class="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-semibold transition">
+              Next Chapter
+            </button>
+          </div>
+        </div>
+
+        <!-- ================= 4. RESPONSIVE BOTTOM CONTROL BAR ================= -->
+        <footer class="pt-4 pb-2 border-t border-slate-200/90 mt-6 flex items-center justify-between gap-3">
+          <button id="btnPrev" class="px-3.5 py-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs font-medium text-slate-700 disabled:opacity-40 disabled:pointer-events-none transition flex items-center gap-1.5 shadow-2xs">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            <span class="hidden xs:inline">Previous</span>
+          </button>
+
+          <div class="flex items-center gap-2">
+            <button id="btnResetChapter" class="text-xs text-slate-400 hover:text-slate-600 px-2.5 py-1.5 font-medium transition" title="Clear answers in this chapter">
+              Reset
+            </button>
+            <button id="btnNext" class="px-5 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold shadow-xs disabled:opacity-40 disabled:pointer-events-none transition flex items-center gap-1.5">
+              <span>Next</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Load question bank from website data -->
+  <script src="data/questions.js"></script>
+
+  <!-- ================= 5. APPLICATION LOGIC ================= -->
+  <script>
+    (function(){
+      // Bank Resolution (External window.SECTIONS from data/questions.js)
+      const SECTIONS = window.SECTIONS || {};
+      const SECTION_ORDER = window.SECTION_ORDER || Object.keys(SECTIONS);
+
+      // Reactive State
+      const STATE = {
+        lang: "both", // "both" | "en" | "hi"
+        activeSection: SECTION_ORDER[0] || null,
+        pool: [],
+        index: 0,
+        answers: {},    // { [qId]: { answered: bool, chosen: any, isCorrect: bool } }
+        bookmarks: new Set(),
+        filterBookmarkedOnly: false
+      };
+
+      // DOM Elements Cache
+      const els = {
+        menuBtn: document.getElementById("menuBtn"),
+        sidebarToggleBtn: document.getElementById("sidebarToggleBtn"),
+        sidebar: document.getElementById("sidebar"),
+        closeSidebarBtn: document.getElementById("closeSidebarBtn"),
+        drawerOverlay: document.getElementById("drawerOverlay"),
+        chapterSearch: document.getElementById("chapterSearch"),
+        chapterList: document.getElementById("chapterList"),
+        sidebarTotalQuestions: document.getElementById("sidebarTotalQuestions"),
+        langBtns: document.querySelectorAll(".lang-btn"),
+        bookmarkFilterBtn: document.getElementById("bookmarkFilterBtn"),
+        bookmarkFilterIcon: document.getElementById("bookmarkFilterIcon"),
+        savedBadge: document.getElementById("savedBadge"),
+
+        // Jump Bar
+        activeChapterPill: document.getElementById("activeChapterPill"),
+        activeQuestionNum: document.getElementById("activeQuestionNum"),
+        questionPillTrack: document.getElementById("questionPillTrack"),
+
+        // Main Quiz Arena
+        quizContainer: document.getElementById("quizContainer"),
+        resultContainer: document.getElementById("resultContainer"),
+        qTypeBadge: document.getElementById("qTypeBadge"),
+        btnBookmark: document.getElementById("btnBookmark"),
+        bookmarkIcon: document.getElementById("bookmarkIcon"),
+        bookmarkText: document.getElementById("bookmarkText"),
+
+        // Question Stems
+        arCard: document.getElementById("arCard"),
+        arAssertionEn: document.getElementById("arAssertionEn"),
+        arAssertionHi: document.getElementById("arAssertionHi"),
+        arReasonEn: document.getElementById("arReasonEn"),
+        arReasonHi: document.getElementById("arReasonHi"),
+        standardQuestionStem: document.getElementById("standardQuestionStem"),
+        stemEn: document.getElementById("stemEn"),
+        stemHi: document.getElementById("stemHi"),
+
+        // Options
+        optionsArea: document.getElementById("optionsArea"),
+        matchArea: document.getElementById("matchArea"),
+
+        // Explanation Box
+        explanationBox: document.getElementById("explanationBox"),
+        expStatusText: document.getElementById("expStatusText"),
+        expTag: document.getElementById("expTag"),
+        expEn: document.getElementById("expEn"),
+        expHi: document.getElementById("expHi"),
+        expRef: document.getElementById("expRef"),
+
+        // Footer
+        btnPrev: document.getElementById("btnPrev"),
+        btnNext: document.getElementById("btnNext"),
+        btnResetChapter: document.getElementById("btnResetChapter"),
+
+        // Results
+        resScore: document.getElementById("resScore"),
+        resCorrect: document.getElementById("resCorrect"),
+        resAccuracy: document.getElementById("resAccuracy"),
+        revisionWrapper: document.getElementById("revisionWrapper"),
+        revisionList: document.getElementById("revisionList"),
+        btnRetryChapter: document.getElementById("btnRetryChapter"),
+        btnNextChapter: document.getElementById("btnNextChapter")
+      };
+
+      function esc(s){
+        return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      }
+
+      // Sidebar Chapter List Renderer
+      function renderSidebar(searchQuery = ""){
+        els.chapterList.innerHTML = "";
+        const qLower = searchQuery.toLowerCase().trim();
+        let totalBankQuestions = 0;
+
+        SECTION_ORDER.forEach((sec, idx) => {
+          const questions = SECTIONS[sec] || [];
+          totalBankQuestions += questions.length;
+          if(qLower && !sec.toLowerCase().includes(qLower)) return;
+
+          const isActive = STATE.activeSection === sec;
+          const answeredCount = questions.filter(q => STATE.answers[q.id]?.answered).length;
+
+          const btn = document.createElement("button");
+          btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-medium flex items-center justify-between gap-2 transition ${
+            isActive
+              ? "bg-brand-50 text-brand-800 font-semibold border border-brand-200"
+              : "text-slate-600 hover:bg-slate-50 hover:text-slate-900 border border-transparent"
+          }`;
+
+          btn.innerHTML = `
+            <div class="truncate flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full ${isActive ? "bg-brand-600" : "bg-slate-300"} shrink-0"></span>
+              <span class="truncate">${esc(sec)}</span>
+            </div>
+            <span class="text-[10px] px-1.5 py-0.5 rounded font-mono font-semibold ${
+              isActive ? "bg-brand-100 text-brand-800" : "bg-slate-100 text-slate-500"
+            }">${answeredCount}/${questions.length}</span>
+          `;
+
+          btn.onclick = () => {
+            STATE.filterBookmarkedOnly = false;
+            updateBookmarkFilterUI();
+            selectSection(sec);
+            closeDrawer();
+          };
+
+          els.chapterList.appendChild(btn);
+        });
+
+        els.sidebarTotalQuestions.textContent = totalBankQuestions;
+      }
+
+      // Select Section & Setup Pool
+      function selectSection(sec){
+        STATE.activeSection = sec;
+        const rawPool = (SECTIONS[sec] || []).slice();
+
+        if(STATE.filterBookmarkedOnly){
+          STATE.pool = rawPool.filter(q => STATE.bookmarks.has(q.id));
+        } else {
+          STATE.pool = rawPool;
+        }
+
+        STATE.index = 0;
+        els.activeChapterPill.textContent = sec;
+
+        els.resultContainer.classList.add("hidden");
+        els.quizContainer.classList.remove("hidden");
+
+        renderSidebar(els.chapterSearch.value);
+        renderJumpPills();
+        renderQuestion();
+      }
+
+      // Dynamic Pill Navigator (1..N)
+      function renderJumpPills(){
+        els.questionPillTrack.innerHTML = "";
+        if(STATE.pool.length === 0){
+          els.questionPillTrack.innerHTML = `<span class="text-[11px] text-slate-400">No questions</span>`;
+          return;
+        }
+
+        STATE.pool.forEach((q, idx) => {
+          const qAns = STATE.answers[q.id];
+          const isCurrent = (idx === STATE.index);
+          const isBookmarked = STATE.bookmarks.has(q.id);
+
+          let bgClass = "bg-slate-100 text-slate-600 border-slate-200";
+          if(qAns?.answered){
+            bgClass = qAns.isCorrect ? "bg-emerald-500 text-white border-emerald-500" : "bg-rose-500 text-white border-rose-500";
+          } else if(isBookmarked){
+            bgClass = "bg-amber-100 text-amber-800 border-amber-300 font-bold";
+          }
+
+          const ringClass = isCurrent ? "ring-2 ring-brand-600 ring-offset-1 font-extrabold" : "";
+
+          const pill = document.createElement("button");
+          pill.className = `w-7 h-7 rounded-lg text-xs font-mono font-semibold border flex items-center justify-center shrink-0 transition ${bgClass} ${ringClass}`;
+          pill.textContent = idx + 1;
+          pill.title = `Jump to Question ${idx + 1}`;
+
+          pill.onclick = () => {
+            STATE.index = idx;
+            renderJumpPills();
+            renderQuestion();
+          };
+
+          els.questionPillTrack.appendChild(pill);
+        });
+      }
+
+      // Render Active Question
+      function renderQuestion(){
+        const q = STATE.pool[STATE.index];
+        if(!q){
+          showResults();
+          return;
+        }
+
+        const qAns = STATE.answers[q.id] || { answered: false, chosen: null, isCorrect: false };
+        const isBookmarked = STATE.bookmarks.has(q.id);
+
+        // Status Bar
+        els.activeQuestionNum.textContent = `Q ${STATE.index + 1} of ${STATE.pool.length}`;
+        els.qTypeBadge.textContent = q.type === "assertion_reason" ? "Assertion & Reason" : q.type === "matching" ? "Matching Pairs" : "Single Choice";
+
+        // Bookmark Button State
+        if(isBookmarked){
+          els.btnBookmark.className = "flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-amber-300 bg-amber-50 text-xs font-semibold text-amber-800 transition";
+          els.bookmarkIcon.setAttribute("fill", "currentColor");
+          els.bookmarkIcon.className = "w-3.5 h-3.5 text-amber-600 transition";
+          els.bookmarkText.textContent = "Saved";
+        } else {
+          els.btnBookmark.className = "flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 hover:border-amber-300 hover:bg-amber-50/60 transition group";
+          els.bookmarkIcon.setAttribute("fill", "none");
+          els.bookmarkIcon.className = "w-3.5 h-3.5 text-slate-400 group-hover:text-amber-500 transition";
+          els.bookmarkText.textContent = "Bookmark";
+        }
+
+        // Assertion-Reason vs Standard MCQ
+        if(q.type === "assertion_reason"){
+          els.arCard.classList.remove("hidden");
+          els.standardQuestionStem.classList.add("hidden");
+          els.arAssertionEn.textContent = q.assertionEn;
+          els.arAssertionHi.textContent = q.assertionHi || "";
+          els.arReasonEn.textContent = q.reasonEn;
+          els.arReasonHi.textContent = q.reasonHi || "";
+        } else {
+          els.arCard.classList.add("hidden");
+          els.standardQuestionStem.classList.remove("hidden");
+          els.stemEn.textContent = q.qEn || q.stemEn || "";
+          els.stemHi.textContent = q.qHi || q.stemHi || "";
+        }
+
+        els.optionsArea.innerHTML = "";
+        els.matchArea.innerHTML = "";
+        els.matchArea.classList.add("hidden");
+
+        if(q.type === "matching"){
+          renderMatching(q, qAns);
+        } else {
+          renderOptions(q, qAns);
+        }
+
+        // Explanation Box
+        if(qAns.answered){
+          els.explanationBox.classList.remove("hidden");
+          if(qAns.isCorrect){
+            els.explanationBox.className = "rounded-xl border border-emerald-200 bg-emerald-50/70 p-4 space-y-2.5";
+            els.expStatusText.innerHTML = `<svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-emerald-800">Correct Answer</span>`;
+            els.expTag.className = "text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-200";
+            els.expTag.textContent = "Marks: +1.0";
+          } else {
+            els.explanationBox.className = "rounded-xl border border-rose-200 bg-rose-50/70 p-4 space-y-2.5";
+            els.expStatusText.innerHTML = `<svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg><span class="text-rose-800">Incorrect Answer</span>`;
+            els.expTag.className = "text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-rose-100 text-rose-800 border border-rose-200";
+            els.expTag.textContent = "Marks: -0.33";
+          }
+          els.expEn.textContent = q.eEn || "";
+          els.expHi.textContent = q.eHi || "";
+          els.expRef.textContent = q.ref || "Constitution of India / M. Laxmikanth";
+        } else {
+          els.explanationBox.classList.add("hidden");
+        }
+
+        // Navigation Buttons
+        els.btnPrev.disabled = STATE.index === 0;
+        els.btnNext.innerHTML = (STATE.index === STATE.pool.length - 1)
+          ? `<span>Summary</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
+          : `<span>Next</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`;
+
+        applyLanguage();
+      }
+
+      // Render Option Choices
+      function renderOptions(q, qAns){
+        els.optionsArea.classList.remove("hidden");
+
+        q.opts.forEach((opt, idx) => {
+          const isChosen = qAns.chosen === idx;
+          const letter = String.fromCharCode(65 + idx);
+
+          let borderClass = "border-slate-200 bg-white hover:border-slate-300 hover:shadow-2xs text-slate-800";
+          let letterBadge = "bg-slate-100 text-slate-600 border-slate-200";
+
+          if(qAns.answered){
+            if(idx === q.correct){
+              borderClass = "border-emerald-500 bg-emerald-50/70 text-emerald-950 font-medium shadow-2xs";
+              letterBadge = "bg-emerald-600 text-white border-emerald-600";
+            } else if(isChosen && !qAns.isCorrect){
+              borderClass = "border-rose-400 bg-rose-50/70 text-rose-950 shadow-2xs";
+              letterBadge = "bg-rose-600 text-white border-rose-600";
+            }
+          }
+
+          const div = document.createElement("div");
+          div.className = `opt-card flex items-start gap-3 p-3 sm:p-3.5 rounded-xl border ${borderClass} cursor-pointer select-none`;
+
+          div.innerHTML = `
+            <span class="w-6 h-6 rounded-md border text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 ${letterBadge}">${letter}</span>
+            <div class="flex-1 space-y-0.5">
+              <div class="opt-text-en text-xs sm:text-sm font-medium leading-relaxed">${esc(opt.en)}</div>
+              <div class="opt-text-hi text-xs sm:text-sm font-hindi text-slate-600 leading-relaxed">${esc(opt.hi)}</div>
+            </div>
+          `;
+
+          div.onclick = () => {
+            if(qAns.answered) return;
+            const isCorrect = (idx === q.correct);
+            STATE.answers[q.id] = { answered: true, chosen: idx, isCorrect: isCorrect };
+            renderSidebar(els.chapterSearch.value);
+            renderJumpPills();
+            renderQuestion();
+          };
+
+          els.optionsArea.appendChild(div);
+        });
+      }
+
+      // Render Matching List
+      function renderMatching(q, qAns){
+        els.matchArea.classList.remove("hidden");
+        const currentChosen = qAns.chosen || {};
+
+        q.col1.forEach((item, ci) => {
+          const row = document.createElement("div");
+          row.className = "flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-xl border border-slate-200 bg-white text-xs";
+
+          const label = document.createElement("div");
+          label.className = "font-medium text-slate-800 flex items-center gap-2";
+          label.innerHTML = `<span class="w-5 h-5 rounded bg-brand-50 text-brand-700 font-mono text-[11px] font-bold flex items-center justify-center">${String.fromCharCode(65 + ci)}</span><span>${esc(item.en)}</span>`;
+
+          const sel = document.createElement("select");
+          sel.className = "border border-slate-200 rounded-lg p-2 bg-slate-50 text-slate-700 text-xs focus:outline-none focus:border-brand-500";
+          sel.disabled = qAns.answered;
+          sel.innerHTML = `<option value="">-- Match List-II --</option>`;
+
+          q.col2.forEach((opt, ti) => {
+            const optEl = document.createElement("option");
+            optEl.value = ti;
+            optEl.textContent = `${ti + 1}. ${opt.en}`;
+            if(String(currentChosen[ci]) === String(ti)) optEl.selected = true;
+            sel.appendChild(optEl);
+          });
+
+          sel.onchange = () => {
+            if(!STATE.answers[q.id]) STATE.answers[q.id] = { answered: false, chosen: {}, isCorrect: false };
+            STATE.answers[q.id].chosen[ci] = sel.value;
+
+            const allAnswered = q.col1.every((_, idx) => STATE.answers[q.id].chosen[idx] !== "" && STATE.answers[q.id].chosen[idx] != null);
+            if(allAnswered){
+              const isCorrect = Object.keys(q.correct).every(k => String(STATE.answers[q.id].chosen[k]) === String(q.correct[k]));
+              STATE.answers[q.id].answered = true;
+              STATE.answers[q.id].isCorrect = isCorrect;
+              renderSidebar(els.chapterSearch.value);
+              renderJumpPills();
+              renderQuestion();
+            }
+          };
+
+          row.appendChild(label);
+          row.appendChild(sel);
+          els.matchArea.appendChild(row);
+        });
+      }
+
+      // Language Toggle Handling
+      function applyLanguage(){
+        const isBoth = STATE.lang === "both";
+        const isEn = isBoth || STATE.lang === "en";
+        const isHi = isBoth || STATE.lang === "hi";
+
+        els.stemEn.style.display = isEn ? "block" : "none";
+        els.stemHi.style.display = isHi ? "block" : "none";
+
+        els.arAssertionEn.style.display = isEn ? "block" : "none";
+        els.arAssertionHi.style.display = isHi ? "block" : "none";
+        els.arReasonEn.style.display = isEn ? "block" : "none";
+        els.arReasonHi.style.display = isHi ? "block" : "none";
+
+        document.querySelectorAll(".opt-text-en").forEach(el => el.style.display = isEn ? "block" : "none");
+        document.querySelectorAll(".opt-text-hi").forEach(el => el.style.display = isHi ? "block" : "none");
+
+        els.expEn.style.display = isEn ? "block" : "none";
+        els.expHi.style.display = isHi ? "block" : "none";
+
+        els.langBtns.forEach(btn => {
+          const active = btn.dataset.lang === STATE.lang;
+          btn.classList.toggle("active", active);
+          btn.classList.toggle("bg-white", active);
+          btn.classList.toggle("text-brand-700", active);
+          btn.classList.toggle("shadow-2xs", active);
+        });
+      }
+
+      // Bookmark Toggle Handler
+      function toggleBookmark(){
+        const q = STATE.pool[STATE.index];
+        if(!q) return;
+
+        if(STATE.bookmarks.has(q.id)){
+          STATE.bookmarks.delete(q.id);
+        } else {
+          STATE.bookmarks.add(q.id);
+        }
+
+        els.savedBadge.textContent = STATE.bookmarks.size;
+        renderJumpPills();
+        renderQuestion();
+      }
+
+      // Bookmark Quick-Filter
+      function toggleBookmarkFilter(){
+        if(STATE.bookmarks.size === 0 && !STATE.filterBookmarkedOnly){
+          alert("No questions saved yet. Click 'Bookmark' on questions you wish to review later.");
+          return;
+        }
+        STATE.filterBookmarkedOnly = !STATE.filterBookmarkedOnly;
+        updateBookmarkFilterUI();
+        selectSection(STATE.activeSection);
+      }
+
+      function updateBookmarkFilterUI(){
+        if(STATE.filterBookmarkedOnly){
+          els.bookmarkFilterBtn.className = "flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-amber-400 bg-amber-50 text-xs font-semibold text-amber-800 transition";
+          els.bookmarkFilterIcon.className = "w-3.5 h-3.5 text-amber-600 transition";
+        } else {
+          els.bookmarkFilterBtn.className = "flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 hover:border-amber-300 hover:bg-amber-50/50 transition";
+          els.bookmarkFilterIcon.className = "w-3.5 h-3.5 text-slate-400 transition";
+        }
+      }
+
+      // Results & Chapter Mastery View
+      function showResults(){
+        els.quizContainer.classList.add("hidden");
+        els.resultContainer.classList.remove("hidden");
+
+        let correct = 0;
+        const total = STATE.pool.length;
+        const wrongQuestions = [];
+
+        STATE.pool.forEach(q => {
+          if(STATE.answers[q.id]?.isCorrect){
+            correct++;
+          } else if(STATE.answers[q.id]?.answered) {
+            wrongQuestions.push(q);
+          }
+        });
+
+        els.resScore.textContent = `${correct} / ${total}`;
+        els.resCorrect.textContent = correct;
+        const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+        els.resAccuracy.textContent = `${pct}%`;
+
+        if(wrongQuestions.length > 0){
+          els.revisionWrapper.classList.remove("hidden");
+          els.revisionList.innerHTML = "";
+          wrongQuestions.forEach(q => {
+            const li = document.createElement("li");
+            li.className = "flex items-start gap-1.5";
+            li.innerHTML = `<span class="text-rose-500 font-bold">•</span><span>${esc(q.qEn || q.stemEn || q.assertionEn)}</span>`;
+            els.revisionList.appendChild(li);
+          });
+        } else {
+          els.revisionWrapper.classList.add("hidden");
+        }
+      }
+
+      // Drawer Management
+      function openDrawer(){
+        els.sidebar.classList.remove("-translate-x-full");
+        els.drawerOverlay.classList.remove("hidden");
+      }
+
+      function closeDrawer(){
+        els.sidebar.classList.add("-translate-x-full");
+        els.drawerOverlay.classList.add("hidden");
+      }
+
+      // Bind Event Listeners
+      els.menuBtn.onclick = openDrawer;
+      els.closeSidebarBtn.onclick = closeDrawer;
+      els.drawerOverlay.onclick = closeDrawer;
+
+      els.sidebarToggleBtn.onclick = () => {
+        els.sidebar.classList.toggle("lg:hidden");
+      };
+
+      els.chapterSearch.oninput = (e) => {
+        renderSidebar(e.target.value);
+      };
+
+      els.btnBookmark.onclick = toggleBookmark;
+      els.bookmarkFilterBtn.onclick = toggleBookmarkFilter;
+
+      els.langBtns.forEach(btn => {
+        btn.onclick = () => {
+          STATE.lang = btn.dataset.lang;
+          applyLanguage();
+        };
+      });
+
+      els.btnPrev.onclick = () => {
+        if(STATE.index > 0){
+          STATE.index--;
+          renderJumpPills();
+          renderQuestion();
+        }
+      };
+
+      els.btnNext.onclick = () => {
+        if(STATE.index < STATE.pool.length - 1){
+          STATE.index++;
+          renderJumpPills();
+          renderQuestion();
+        } else {
+          showResults();
+        }
+      };
+
+      els.btnResetChapter.onclick = () => {
+        STATE.pool.forEach(q => delete STATE.answers[q.id]);
+        STATE.index = 0;
+        renderSidebar(els.chapterSearch.value);
+        renderJumpPills();
+        renderQuestion();
+      };
+
+      els.btnRetryChapter.onclick = () => {
+        STATE.pool.forEach(q => delete STATE.answers[q.id]);
+        STATE.index = 0;
+        els.resultContainer.classList.add("hidden");
+        els.quizContainer.classList.remove("hidden");
+        renderSidebar(els.chapterSearch.value);
+        renderJumpPills();
+        renderQuestion();
+      };
+
+      els.btnNextChapter.onclick = () => {
+        const curIdx = SECTION_ORDER.indexOf(STATE.activeSection);
+        const nextSec = SECTION_ORDER[curIdx + 1] || SECTION_ORDER[0];
+        selectSection(nextSec);
+      };
+
+      // Keyboard Shortcuts (A, B, C, D, Arrows, Enter, Bookmark 'M')
+      window.addEventListener("keydown", (e) => {
+        if(!els.resultContainer.classList.contains("hidden")) return;
+        const q = STATE.pool[STATE.index];
+        if(!q) return;
+
+        if(['a', 'b', 'c', 'd'].includes(e.key.toLowerCase()) && q.type !== "matching"){
+          const idx = e.key.toLowerCase().charCodeAt(0) - 97;
+          if(q.opts && q.opts[idx] && !STATE.answers[q.id]?.answered){
+            const isCorrect = (idx === q.correct);
+            STATE.answers[q.id] = { answered: true, chosen: idx, isCorrect: isCorrect };
+            renderSidebar(els.chapterSearch.value);
+            renderJumpPills();
+            renderQuestion();
+          }
+        } else if(e.key === "ArrowRight" || e.key === "Enter"){
+          els.btnNext.click();
+        } else if(e.key === "ArrowLeft" && !els.btnPrev.disabled){
+          els.btnPrev.click();
+        } else if(e.key.toLowerCase() === "m"){
+          toggleBookmark();
+        }
+      });
+
+      // Initial Launch
+      renderSidebar();
+      if(SECTION_ORDER.length > 0){
+        selectSection(SECTION_ORDER[0]);
+      }
+    })();
+  </script>
+</body>
+</html>

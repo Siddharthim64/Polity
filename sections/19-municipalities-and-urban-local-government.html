@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Municipalities and urban local government</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Municipalities and urban local government</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-010", "section": "Municipalities and urban local government", "sub": "Constitutional status (74th Amendment)", "type": "mcq_single", "qEn": "Which Amendment Acts deal with Local Governance Institutions in India?", "qHi": "भारत में स्थानीय शासन संस्थाओं से संबंधित कौन-से संशोधन अधिनियम हैं?", "cEn": "73rd and 74th Amendment Acts", "cHi": "73वां और 74वां संशोधन अधिनियम", "eEn": "The 73rd Amendment Act, 1992 conferred constitutional status on Panchayats (Part IX), and the 74th Amendment Act, 1992 on Municipalities (Part IXA).", "eHi": "73वां संशोधन अधिनियम, 1992 ने पंचायतों (भाग IX) को संवैधानिक दर्जा दिया, और 74वां संशोधन अधिनियम, 1992 ने नगर पालिकाओं (भाग IX-ए) को।", "ref": "73rd and 74th Constitution Amendment Acts, 1992", "opts": [{"en": "63rd and 64th Amendment Acts", "hi": "63वां और 64वां संशोधन अधिनियम"}, {"en": "86th and 87th Amendment Acts", "hi": "86वां और 87वां संशोधन अधिनियम"}, {"en": "42nd and 43rd Amendment Acts", "hi": "42वां और 43वां संशोधन अधिनियम"}, {"en": "73rd and 74th Amendment Acts", "hi": "73वां और 74वां संशोधन अधिनियम"}], "correct": 3},
+  {"id": "POL-085", "section": "Municipalities and urban local government", "sub": "12th Schedule subjects", "type": "mcq_single", "qEn": "The 12th Schedule lists how many subjects for Municipalities?", "qHi": "12वीं अनुसूची नगर पालिकाओं के लिए कितने विषय सूचीबद्ध करती है?", "cEn": "18", "cHi": "18", "eEn": "The 12th Schedule (added by the 74th Amendment) lists 18 subjects for Municipalities.", "eHi": "12वीं अनुसूची (74वें संशोधन द्वारा जोड़ी गई) नगर पालिकाओं के लिए 18 विषय सूचीबद्ध करती है।", "ref": "12th Schedule", "opts": [{"en": "18", "hi": "18"}, {"en": "29", "hi": "29"}, {"en": "22", "hi": "22"}, {"en": "12", "hi": "12"}], "correct": 0}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

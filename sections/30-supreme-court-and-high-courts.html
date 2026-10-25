@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Supreme Court and High Courts</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Supreme Court and High Courts</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-038", "section": "Supreme Court and High Courts", "sub": "Supreme Court", "type": "mcq_single", "qEn": "The Supreme Court of India is constituted under:", "qHi": "भारत के सर्वोच्च न्यायालय का गठन किसके तहत किया गया है?", "cEn": "Article 124", "cHi": "अनुच्छेद 124", "eEn": "Article 124 states that there shall be a Supreme Court of India consisting of a Chief Justice of India and, until Parliament by law prescribes a larger number, not more than seven other judges. Parliament can increase the number by law.", "eHi": "अनुच्छेद 124 कहता है कि भारत का एक सर्वोच्च न्यायालय होगा जिसमें भारत के मुख्य न्यायाधीश और, जब तक संसद कानून द्वारा बड़ी संख्या निर्धारित नहीं करती, सात से अधिक अन्य न्यायाधीश नहीं होंगे। संसद कानून द्वारा संख्या बढ़ा सकती है।", "ref": "Article 124, Constitution of India", "opts": [{"en": "Article 124", "hi": "अनुच्छेद 124"}, {"en": "Article 214", "hi": "अनुच्छेद 214"}, {"en": "Article 324", "hi": "अनुच्छेद 324"}, {"en": "Article 315", "hi": "अनुच्छेद 315"}], "correct": 0},
+  {"id": "POL-039", "section": "Supreme Court and High Courts", "sub": "High Courts", "type": "mcq_single", "qEn": "High Courts are constituted under:", "qHi": "उच्च न्यायालयों का गठन किसके तहत किया गया है?", "cEn": "Article 214", "cHi": "अनुच्छेद 214", "eEn": "Article 214 states that there shall be a High Court for each State. Article 226 gives High Courts power to issue writs; Article 227 gives superintendence over all courts and tribunals within their jurisdiction.", "eHi": "अनुच्छेद 214 कहता है कि प्रत्येक राज्य के लिए एक उच्च न्यायालय होगा। अनुच्छेद 226 उच्च न्यायालयों को रिट जारी करने की शक्ति देता है; अनुच्छेद 227 अपने अधिकार क्षेत्र में सभी न्यायालयों और न्यायाधिकरणों पर अधीक्षण देता है।", "ref": "Article 214, Constitution of India", "opts": [{"en": "Article 124", "hi": "अनुच्छेद 124"}, {"en": "Article 214", "hi": "अनुच्छेद 214"}, {"en": "Article 226", "hi": "अनुच्छेद 226"}, {"en": "Article 227", "hi": "अनुच्छेद 227"}], "correct": 1},
+  {"id": "POL-077", "section": "Supreme Court and High Courts", "sub": "Supreme Court jurisdiction", "type": "mcq_single", "qEn": "Which Article provides for the advisory jurisdiction of the Supreme Court?", "qHi": "सर्वोच्च न्यायालय की परामर्शदाता क्षेत्राधिकार का प्रावधान किस अनुच्छेद में है?", "cEn": "Article 143", "cHi": "अनुच्छेद 143", "eEn": "Article 143 provides that the President may refer a question of law to the Supreme Court for its opinion.", "eHi": "अनुच्छेद 143 प्रावधान करता है कि राष्ट्रपति विधि के किसी प्रश्न को उसकी राय के लिए सर्वोच्च न्यायालय को भेज सकता है।", "ref": "Article 143", "opts": [{"en": "Article 143", "hi": "अनुच्छेद 143"}, {"en": "Article 136", "hi": "अनुच्छेद 136"}, {"en": "Article 131", "hi": "अनुच्छेद 131"}, {"en": "Article 132", "hi": "अनुच्छेद 132"}], "correct": 0},
+  {"id": "POL-078", "section": "Supreme Court and High Courts", "sub": "High Court writ jurisdiction", "type": "mcq_single", "qEn": "High Courts can issue writs under:", "qHi": "उच्च न्यायालय रिट किसके तहत जारी कर सकते हैं:", "cEn": "Article 226", "cHi": "अनुच्छेद 226", "eEn": "Article 226 empowers High Courts to issue writs for enforcement of Fundamental Rights and for any other purpose.", "eHi": "अनुच्छेद 226 उच्च न्यायालयों को मूल अधिकारों के प्रवर्तन और किसी अन्य उद्देश्य के लिए रिट जारी करने का अधिकार देता है।", "ref": "Article 226", "opts": [{"en": "Article 226", "hi": "अनुच्छेद 226"}, {"en": "Article 227", "hi": "अनुच्छेद 227"}, {"en": "Article 32", "hi": "अनुच्छेद 32"}, {"en": "Article 136", "hi": "अनुच्छेद 136"}], "correct": 0},
+  {"id": "POL-113", "section": "Supreme Court and High Courts", "sub": "Supreme Court jurisdiction", "type": "mcq_single", "qEn": "Which of the following writs is issued by the Supreme Court under Article 32 to enforce Fundamental Rights?", "qHi": "मूल अधिकारों के प्रवर्तन के लिए सर्वोच्च न्यायालय अनुच्छेद 32 के तहत कौन सी रिट जारी करता है?", "cEn": "All of the above (Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo Warranto)", "cHi": "उपरोक्त सभी (हेबियस कॉर्पस, मैंडामस, प्रतिषेध, सर्टियोरारी, क्वो वारैंटो)", "eEn": "Under Article 32, the Supreme Court can issue directions, orders or writs including Habeas Corpus, Mandamus, Prohibition, Certiorari and Quo Warranto for enforcement of Fundamental Rights.", "eHi": "अनुच्छेद 32 के तहत, सर्वोच्च न्यायालय मूल अधिकारों के प्रवर्तन के लिए निर्देश, आदेश या रिट जारी कर सकता है जिनमें हेबियस कॉर्पस, मैंडामस, प्रतिषेध, सर्टियोरारी और क्वो वारैंटो शामिल हैं।", "ref": "Article 32, Constitution of India", "opts": [{"en": "Habeas Corpus only", "hi": "केवल हेबियस कॉर्पस"}, {"en": "Mandamus only", "hi": "केवल मैंडामस"}, {"en": "Certiorari only", "hi": "केवल सर्टियोरारी"}, {"en": "All of the above (Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo Warranto)", "hi": "उपरोक्त सभी (हेबियस कॉर्पस, मैंडामस, प्रतिषेध, सर्टियोरारी, क्वो वारैंटो)"}], "correct": 3}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

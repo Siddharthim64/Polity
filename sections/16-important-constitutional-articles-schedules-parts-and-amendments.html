@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPPCS 2026 Polity — Important constitutional articles, schedules, parts, and amendments</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>UPPCS 2026 Polity — Important constitutional articles, schedules, parts, and amendments</h1>
+    <div class="sub">Bilingual Indian Polity  |  Chapter-wise Sections  |  One question at a time</div>
+  </header>
+
+  <div class="controls">
+    <button id="btnAll" class="active">All Sections</button>
+    <button id="btnReset">Reset Progress</button>
+  </div>
+  <div class="controls section-list" id="sectionButtons"></div>
+  <div class="lang-toggle">
+    <button id="langBoth" class="active">Both</button>
+    <button id="langEn">English</button>
+    <button id="langHi">हिन्दी</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="qCounter">Question <span id="curQ">1</span> of <span id="totQ">10</span></span>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <div class="question-card" id="quizArea">
+    <div class="q-section" id="qSection"></div>
+    <div class="q-number" id="qNumber"></div>
+    <div id="arHeader" class="hide"></div>
+    <div class="q-en" id="qEn"></div>
+    <div class="q-hi" id="qHi"></div>
+    <div class="options" id="optionsArea"></div>
+    <div class="feedback" id="feedback">
+      <h4 id="fbTitle"></h4>
+      <div class="tag" id="fbTag"></div>
+      <p id="fbEn"></p>
+      <p id="fbHi"></p>
+      <div class="ref" id="fbRef"></div>
+    </div>
+    <button class="btn-next" id="btnNext" disabled>Next Question</button>
+  </div>
+
+  <div class="result-card hide" id="resultArea">
+    <div class="score-big" id="finalScore">0 / 10</div>
+    <div class="result-msg" id="finalMsg"></div>
+    <div class="weak-list">
+      <h4>Weak Topics &amp; Revision</h4>
+      <ul id="weakList"></ul>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">Restart Test</button>
+  </div>
+</div>
+
+<script>const Q = [
+  {"id": "POL-019", "section": "Important constitutional articles, schedules, parts, and amendments", "sub": "Schedules", "type": "mcq_single", "qEn": "How many items are there in the 11th Schedule of the Constitution of India?", "qHi": "संविधान की 11वीं अनुसूची में कितने विषय हैं?", "cEn": "29", "cHi": "29", "eEn": "The 11th Schedule (added by the 73rd Amendment) lists 29 subjects/functions that may be entrusted to Panchayats (e.g., agriculture, land improvement, minor irrigation, animal husbandry, education, health). The 12th Schedule lists 18 subjects for Municipalities.", "eHi": "11वीं अनुसूची (73वें संशोधन द्वारा जोड़ी गई) में 29 विषय/कार्य सूचीबद्ध हैं जो पंचायतों को सौंपे जा सकते हैं (जैसे कृषि, भूमि सुधार, लघु सिंचाई, पशुपालन, शिक्षा, स्वास्थ्य)। 12वीं अनुसूची नगर पालिकाओं के लिए 18 विषय सूचीबद्ध करती है।", "ref": "11th Schedule, Constitution of India; 73rd Amendment Act, 1992", "opts": [{"en": "22", "hi": "22"}, {"en": "24", "hi": "24"}, {"en": "29", "hi": "29"}, {"en": "32", "hi": "32"}], "correct": 2},
+  {"id": "POL-095", "section": "Important constitutional articles, schedules, parts, and amendments", "sub": "Tenth Schedule", "type": "mcq_single", "qEn": "The Tenth Schedule deals with:", "qHi": "दसवीं अनुसूची किससे संबंधित है:", "cEn": "Anti-defection", "cHi": "दल-बदल", "eEn": "The Tenth Schedule contains provisions for disqualification on the ground of defection (anti-defection law).", "eHi": "दसवीं अनुसूची में दल-बदल के आधार पर अयोग्यता के प्रावधान हैं (दल-बदल विरोधी कानून)।", "ref": "Tenth Schedule", "opts": [{"en": "Anti-defection", "hi": "दल-बदल"}, {"en": "Panchayats", "hi": "पंचायतें"}, {"en": "Official languages", "hi": "आधिकारिक भाषाएं"}, {"en": "Land reforms", "hi": "भूमि सुधार"}], "correct": 0},
+  {"id": "POL-096", "section": "Important constitutional articles, schedules, parts, and amendments", "sub": "Article 368", "type": "mcq_single", "qEn": "Amendment of the Constitution is provided under:", "qHi": "संविधान का संशोधन किसके तहत है:", "cEn": "Article 368", "cHi": "अनुच्छेद 368", "eEn": "Article 368 provides the power of Parliament to amend the Constitution and the procedure therefor.", "eHi": "अनुच्छेद 368 संविधान में संशोधन करने और उसके लिए प्रक्रिया की संसद की शक्ति प्रदान करता है।", "ref": "Article 368", "opts": [{"en": "Article 368", "hi": "अनुच्छेद 368"}, {"en": "Article 365", "hi": "अनुच्छेद 365"}, {"en": "Article 356", "hi": "अनुच्छेद 356"}, {"en": "Article 352", "hi": "अनुच्छेद 352"}], "correct": 0},
+  {"id": "POL-097", "section": "Important constitutional articles, schedules, parts, and amendments", "sub": "Part IVA", "type": "mcq_single", "qEn": "Fundamental Duties are contained in:", "qHi": "मूल कर्तव्य किस भाग में निहित हैं:", "cEn": "Part IVA", "cHi": "भाग IV-अ", "eEn": "Part IVA contains Article 51A listing the Fundamental Duties.", "eHi": "भाग IV-अ में मूल कर्तव्यों को सूचीबद्ध करने वाला अनुच्छेद 51ए निहित है।", "ref": "Part IVA", "opts": [{"en": "Part IVA", "hi": "भाग IV-अ"}, {"en": "Part IV", "hi": "भाग IV"}, {"en": "Part III", "hi": "भाग III"}, {"en": "Part II", "hi": "भाग II"}], "correct": 0},
+  {"id": "POL-108", "section": "Important constitutional articles, schedules, parts, and amendments", "sub": "Schedules of the Constitution", "type": "matching", "qEn": "Match the Schedule of the Constitution with its subject.", "qHi": "संविधान की अनुसूची को उसके विषय से मिलान करें।", "cEn": "First Schedule — States and Union Territories; Second Schedule — Emoluments, allowances, privileges; Tenth Schedule — Anti-defection; Twelfth Schedule — 18 subjects for Municipalities", "cHi": "प्रथम अनुसूची — राज्य और केंद्र शासित प्रदेश; द्वितीय अनुसूची — वेतन, भत्ते, विशेषाधिकार; दसवीं अनुसूची — दल-बदल; बारहवीं अनुसूची — नगर पालिकाओं के लिए 18 विषय", "eEn": "The First Schedule lists the States and Union Territories. The Second Schedule lists emoluments/allowances/privileges of constitutional functionaries. The Tenth Schedule contains anti-defection provisions. The Twelfth Schedule (74th Amendment) lists 18 subjects for Municipalities.", "eHi": "प्रथम अनुसूची राज्यों और केंद्र शासित प्रदेशों को सूचीबद्ध करती है। द्वितीय अनुसूची संवैधानिक पदाधिकारियों के वेतन/भत्ते/विशेषाधिकार सूचीबद्ध करती है। दसवीं अनुसूची में दल-बदल प्रावधान हैं। बारहवीं अनुसूची (74वां संशोधन) नगर पालिकाओं के लिए 18 विषय सूचीबद्ध करती है।", "ref": "Schedules of the Constitution of India", "col1": [{"en": "First Schedule", "hi": "प्रथम अनुसूची"}, {"en": "Second Schedule", "hi": "द्वितीय अनुसूची"}, {"en": "Tenth Schedule", "hi": "दसवीं अनुसूची"}, {"en": "Twelfth Schedule", "hi": "बारहवीं अनुसूची"}], "col2": [{"en": "Anti-defection", "hi": "दल-बदल"}, {"en": "18 subjects for Municipalities", "hi": "नगर पालिकाओं के लिए 18 विषय"}, {"en": "States and Union Territories", "hi": "राज्य और केंद्र शासित प्रदेश"}, {"en": "Emoluments, allowances, privileges", "hi": "वेतन, भत्ते, विशेषाधिकार"}], "opts": [{"en": "Anti-defection", "hi": "दल-बदल"}, {"en": "18 subjects for Municipalities", "hi": "नगर पालिकाओं के लिए 18 विषय"}, {"en": "States and Union Territories", "hi": "राज्य और केंद्र शासित प्रदेश"}, {"en": "Emoluments, allowances, privileges", "hi": "वेतन, भत्ते, विशेषाधिकार"}], "correct": {"0": "2", "1": "3", "2": "0", "3": "1"}},
+  {"id": "POL-110", "section": "Important constitutional articles, schedules, parts, and amendments", "sub": "Parts of the Constitution", "type": "matching", "qEn": "Match the Part of the Constitution with the subject it deals with.", "qHi": "संविधान के भाग को उस विषय से मिलान करें जिससे वह संबंधित है।", "cEn": "Part II — Citizenship; Part III — Fundamental Rights; Part IV — Directive Principles; Part IX — Panchayats", "cHi": "भाग II — नागरिकता; भाग III — मूल अधिकार; भाग IV — नीति निदेशक तत्व; भाग IX — पंचायतें", "eEn": "Part II (Articles 5-11) deals with Citizenship; Part III (Articles 12-35) with Fundamental Rights; Part IV (Articles 36-51) with Directive Principles; Part IX (Articles 243-243O) with Panchayats (73rd Amendment).", "eHi": "भाग II (अनुच्छेद 5-11) नागरिकता से संबंधित है; भाग III (अनुच्छेद 12-35) मूल अधिकारों से; भाग IV (अनुच्छेद 36-51) नीति निदेशक तत्वों से; भाग IX (अनुच्छेद 243-243ओ) पंचायतों से (73वां संशोधन)।", "ref": "Parts II, III, IV, IX, Constitution of India", "col1": [{"en": "Part II", "hi": "भाग II"}, {"en": "Part III", "hi": "भाग III"}, {"en": "Part IV", "hi": "भाग IV"}, {"en": "Part IX", "hi": "भाग IX"}], "col2": [{"en": "Fundamental Rights", "hi": "मूल अधिकार"}, {"en": "Citizenship", "hi": "नागरिकता"}, {"en": "Panchayats", "hi": "पंचायतें"}, {"en": "Directive Principles", "hi": "नीति निदेशक तत्व"}], "opts": [{"en": "Fundamental Rights", "hi": "मूल अधिकार"}, {"en": "Citizenship", "hi": "नागरिकता"}, {"en": "Panchayats", "hi": "पंचायतें"}, {"en": "Directive Principles", "hi": "नीति निदेशक तत्व"}], "correct": {"0": "1", "1": "0", "2": "3", "3": "2"}}
+];</script>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
