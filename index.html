@@ -59,7 +59,7 @@
   </style>
 </head>
 
-<body class="bg-[#f8fafc] text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-indigo-100 selection:text-indigo-900">
+<body class="bg-[#f8fafc] text-slate-900 font-sans antialiased h-screen flex flex-col overflow-y-hidden selection:bg-indigo-100 selection:text-indigo-900">
 
   <!-- ================= 1. EXECUTIVE TOPBAR ================= -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 h-14 flex items-center justify-between px-3 sm:px-6">
@@ -388,6 +388,12 @@
         return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
       }
 
+      // Keep the question in view when navigating so the user isn't left scrolled down
+      function scrollQuizToTop(){
+        const main = document.querySelector("main");
+        if(main) main.scrollTop = 0;
+      }
+
       // Sidebar Chapter List Renderer
       function renderSidebar(searchQuery = ""){
         els.chapterList.innerHTML = "";
@@ -498,6 +504,8 @@
           showResults();
           return;
         }
+
+        scrollQuizToTop();
 
         const qAns = STATE.answers[q.id] || { answered: false, chosen: null, isCorrect: false };
         const isBookmarked = STATE.bookmarks.has(q.id);
